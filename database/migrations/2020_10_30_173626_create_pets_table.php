@@ -15,16 +15,20 @@ class CreatePetsTable extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 255);
-            $table->text('description'); // Описание
-            $table->string('type', 64); // Порода
-            $table->string('breed_name', 255);
+            $table->string('card_number', 32);
+            $table->string('type', 32);
+            $table->string('date_of_birth', 16);
+            $table->float('weight');
+            $table->string('name', 64); // кличка
+            $table->string('sex', 10);
+            $table->string('breed_name', 64);
             $table->string('color', 64);
-            $table->date('date_of_birth');
-            $table->string('sex', 2);
-            $table->date('date_arrived'); // Дата прибытия в приют
-            $table->date('date_adopted'); // Дата выдачи из приюта
-            $table->timestamps();
+            $table->string('fur', 64);
+            $table->string('ears', 20);
+            $table->string('tail', 20);
+            $table->string('size', 20);
+            $table->string('special_signs', 255);
+            $table->integer('enclosure_number');
         });
     }
 
