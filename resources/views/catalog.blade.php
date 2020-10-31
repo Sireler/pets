@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row justify-content-around text-center">
-                                        <div class="col"><a href="#" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                        <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
                                         <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                     </div>
                                 </div>
