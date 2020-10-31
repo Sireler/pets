@@ -14,6 +14,10 @@
                         </div>
                     @endif
 
+                    <div>
+                        <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Справочники</a>
+                    </div>
+
 
                     @foreach($user->roles as $role)
                         {{ $role }} <br>

@@ -23,7 +23,14 @@ Route::get('/home', 'HomeController@index')
 
 
 
+Route::prefix('directories')->group(function () {
 
+    Route::get('operating_organizations', 'Directories\\OperatingOrganizationController@index')->name('directories.organizations');
+    Route::put('operating_organizations', 'Directories\\OperatingOrganizationController@update')->name('directories.organizations.update');
+    Route::post('operating_organizations', 'Directories\\OperatingOrganizationController@store')->name('directories.organizations.store');
+    Route::post('operating_organizations/{id}', 'Directories\\OperatingOrganizationController@destroy')->name('directories.organizations.delete');
+
+});
 
 
 
