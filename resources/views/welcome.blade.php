@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="row">
-        <img class="img-fluid"
-             src=""
-             alt="maim" style="height: 460px; width: 100%;">
+{{--        <img class="img-fluid"--}}
+{{--             src=""--}}
+{{--             alt="maim" style="height: 460px; width: 100%;">--}}
 
     </div>
     <div class="container-fluid">
