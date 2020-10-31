@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Справочник: ЭКПЛУАТИЗИРУЮЩИЕ ОРГАНИЗАЦИИ</div>
+                    <div class="card-header">Справочник: ОРГАНИЗАЦИИ</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -24,7 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th>Наименование</th>
-                                    <th>Тип</th>
+                                    <th>Вышестоящая организация</th>
                                     <th></th>
                                 </tr>
                                 </thead>
