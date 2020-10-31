@@ -372,10 +372,30 @@
                         <div class="row">
                             <div class="col-3 border-bottom my-4">
                                 <h4>Медицинская карточка животного</h4>
+                                <p>Сведения о вакцинации:</p>
                             </div>
                         </div>
                         <div class="row">
-
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Дата</th>
+                                        <th scope="col">Наименование препарата</th>
+                                        <th scope="col">Доза</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($pet->vaccinations as $v)
+                                        <tr>
+                                            <td>{{ @$v->date }}</td>
+                                            <td>{{ @$v->vaccine_type }}</td>
+                                            <td>{{ @$v->serial }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 

@@ -52,4 +52,10 @@ class Pet extends Model
     {
         return $this->hasOne(PetHealthStatus::class, 'pet_id', 'id');
     }
+
+    public function vaccinations()
+    {
+        return $this->hasMany(PetVaccination::class, 'pet_id', 'id');
+    }
+
 }
