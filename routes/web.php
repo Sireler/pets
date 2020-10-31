@@ -14,8 +14,13 @@
 Route::get('/', function () {
     $petTypes = \App\PetType::all();
 
+    $dogs = $pets = \App\Pet::where('type', 'собака')->limit(3)->get();
+    $cats = $pets = \App\Pet::where('type', 'Кошка')->limit(3)->get();
+
     return view('welcome', [
-        'petTypes' => $petTypes
+        'petTypes' => $petTypes,
+        'dogs' => $dogs,
+        'cats' => $cats
     ]);
 });
 

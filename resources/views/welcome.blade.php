@@ -29,9 +29,6 @@
         </div>
 
     <div class="row">
-{{--        <img class="img-fluid"--}}
-{{--             src=""--}}
-{{--             alt="maim" style="height: 460px; width: 100%;">--}}
 
     </div>
     <div class="container-fluid">
@@ -78,25 +75,67 @@
                     <div class="container ">
                         <div class="row">
 
-                            @for ($i = 0; $i < 6; $i++)
-                                <div class="col-md-4 pb-3">
-                                    <div class="card">
-                                        <img class="card-img-top" src="{{ asset('../img/3/1197.jpg') }}" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Джони</h5>
-                                            <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
-                                                пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно
-                                                жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="row justify-content-around text-center">
-                                                <div class="col"><a href="#" class="card-link btn btn-primary w-100">Подробнее</a></div>
-                                                <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
+                                @foreach ($cats as $pet)
+                                    @php
+                                        $photo = asset('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg' );
+                                        if( ! is_file('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg')) {
+                                            $photo = asset('img/nophoto.jpg');
+                                        }
+                                    @endphp
+
+                                    <div class="col-md-4 pb-3">
+                                        <div class="card">
+                                            <img class="card-img-top"
+                                                 src="{{ $photo }}"
+                                                 style="max-height: 260px;"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $pet->name }}</h5>
+                                                <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
+                                                    пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно
+                                                    жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row justify-content-around text-center">
+                                                    <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                                    <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endfor
+                                @endforeach
+
+                                @foreach ($dogs as $pet)
+                                    @php
+                                        $photo = asset('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg' );
+                                        if( ! is_file('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg')) {
+                                            $photo = asset('img/nophoto.jpg');
+                                        }
+                                    @endphp
+
+                                    <div class="col-md-4 pb-3">
+                                        <div class="card">
+                                            <img class="card-img-top"
+                                                 src="{{ $photo }}"
+                                                 style="max-height: 260px;"
+                                                 alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $pet->name }}</h5>
+                                                <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
+                                                    пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно
+                                                    жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row justify-content-around text-center">
+                                                    <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                                    <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+
 
                         </div>
                     </div>
