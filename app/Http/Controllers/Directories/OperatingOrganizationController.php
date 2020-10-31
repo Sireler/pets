@@ -41,7 +41,8 @@ class OperatingOrganizationController extends Controller
     public function store(Request $request)
     {
         $operatingOrganization = OperatingOrganization::create([
-            'name' => $request->get('name')
+            'name' => $request->get('name'),
+            'type' => $request->get('type')
         ]);
 
         return redirect()->back();
@@ -79,8 +80,16 @@ class OperatingOrganizationController extends Controller
     public function update(Request $request)
     {
         $operatingOrganization = OperatingOrganization::where('id', $request->get('id'))->first();
-
         $operatingOrganization->name = $request->get('name');
+        $type_code = $request->get('type');
+
+        if ($type_code == 1) {
+            $type = 'Префектура';
+        } else {
+            $type = 'ДЖКХ города Москвы';
+        }
+
+        $operatingOrganization->type = $type;
         $operatingOrganization->save();
 
         return redirect()->back();

@@ -24,6 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th>Наименование</th>
+                                    <th>Тип</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -31,8 +32,10 @@
                                 @foreach($organizations as $org)
                                     <tr>
                                         <td>{{ $org->name }}</td>
+                                        <td>{{ $org->type }}</td>
                                         <td>
                                             <button class="edit-table btn mb-1"
+                                               data-type="{{ $org->type }}"
                                                data-id="{{ $org->id }}"
                                                data-org="{{ $org->name }}"
                                                data-toggle="modal"
@@ -65,13 +68,21 @@
 
         $(document).ready( function () {
             $('#table_org').DataTable({
-                paging: false
+                paging: true
             });
-
 
             $('.edit-table').on('click', function () {
                 $('#org-id').val($(this).data('id'));
                 $('#org-name').val($(this).data('org'));
+
+                let sel = 1;
+                if ($(this).data('type') === 'Префектура') {
+                    sel = 1
+                } else {
+                    sel = 2;
+                }
+
+                $('#edit-type option[value=' + sel + ']').attr('selected', true)
             });
         } );
 
@@ -99,6 +110,12 @@
                         <div class="form-group">
                             <label for="org-name">Наименование</label>
                             <input name="name" type="text" class="form-control" id="org-name" placeholder="Наименование">
+                        </div>
+                        <div class="form-group">
+                            <select id="edit-type" name="type" class="form-control">
+                                <option value="1">Префектура</option>
+                                <option value="2">ДЖКХ города Москвы</option>
+                            </select>
                         </div>
 
                         <div class="modal-footer">
@@ -133,6 +150,13 @@
                         <div class="form-group">
                             <label for="org-name">Наименование</label>
                             <input name="name" type="text" class="form-control" id="org-add-name" placeholder="Наименование">
+                        </div>
+
+                        <div class="form-group">
+                            <select id="ttype" name="type" class="form-control">
+                                <option>Префектура</option>
+                                <option>ДЖКХ города Москвы</option>
+                            </select>
                         </div>
 
                         <div class="modal-footer">
