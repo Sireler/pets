@@ -5,5 +5,6 @@
     <div class="dropdown-menu">
         <a class="dropdown-item" href="{{ route('directories.organizations') }}">Оперирующие организации</a>
         <a class="dropdown-item" href="{{ route('directories.pet_types') }}">Виды животных</a>
+        <a class="dropdown-item" href="{{ route('directories.gender_types') }}">Виды пола</a>
     </div>
 </div>

@@ -35,6 +35,10 @@ Route::prefix('directories')->group(function () {
     Route::post('pet_types', 'Directories\\PetTypeController@store')->name('directories.pet_types.store');
     Route::post('pet_types/{id}', 'Directories\\PetTypeController@destroy')->name('directories.pet_types.delete');
 
+    Route::get('gender_types', 'Directories\\GenderTypeController@index')->name('directories.gender_types');
+    Route::put('gender_types', 'Directories\\GenderTypeController@update')->name('directories.gender_types.update');
+    Route::post('gender_types', 'Directories\\GenderTypeController@store')->name('directories.gender_types.store');
+    Route::post('gender_types/{id}', 'Directories\\GenderTypeController@destroy')->name('directories.gender_types.delete');
 });
 
 
