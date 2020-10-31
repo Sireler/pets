@@ -65,6 +65,11 @@ Route::prefix('directories')->group(function () {
     Route::post('euthanasia_types', 'Directories\\EuthanasiaTypeController@store')->name('directories.euthanasia_types.store');
     Route::post('euthanasia_types/{id}', 'Directories\\EuthanasiaTypeController@destroy')->name('directories.euthanasia_types.delete');
 
+    Route::get('shelters', 'Directories\\ShelterController@index')->name('directories.shelters');
+    Route::put('shelters', 'Directories\\ShelterController@update')->name('directories.shelters.update');
+    Route::post('shelters', 'Directories\\ShelterController@store')->name('directories.shelters.store');
+    Route::post('shelters/{id}', 'Directories\\ShelterController@destroy')->name('directories.shelters.delete');
+
 
 
 });
