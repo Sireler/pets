@@ -8,6 +8,13 @@
 
                 <!-- Основное -->
                <div class="container">
+                   <div class="row my-5">
+                       <div class="col">
+                           <div class="h1">
+                               Карточка животного № XXXX-XX
+                           </div>
+                       </div>
+                   </div>
                    <div class="row mb-3">
                        <div class="col-3 border-bottom">
                            <h4>Основные сведения</h4>
@@ -50,6 +57,13 @@
 
                    <div class="row mt-2">
                        <div class="col">
+                           <label for="birthDate">Дата рождения</label>
+                           <input required id="birthDate" class=" form-control" type="date" name="" placeholder="" value="">
+                       </div>
+                       <div class="col">
+                           <div class="row">
+                               <div class="col-12"></div>
+                           </div>
                            <label>Пол</label>
                            <div class="form-check form-check-inline">
                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -103,6 +117,11 @@
                                <label for="size">Размер (см)</label>
                                <input id="size" class=" form-control" name="size" type="text" placeholder="см" value="" >
                            </div>
+
+                           <div class="col">
+                               <label for="weight">Вес (кг)</label>
+                               <input id="weight" class=" form-control" name="weight" type="text" placeholder="кг" value="" >
+                           </div>
                        </div>
                    </div>
 
@@ -142,11 +161,21 @@
                     </div>
                     <div class="row">
                         <div class="col-auto ml-4">
-                            <input class="form-check-input" type="checkbox" value="" id="Check1">
-                            <label class="form-check-label" for="Check1"><p>Стерилизация</p></label>
+                            <input type="checkbox" id="checkbox"> Стерилизация
+
+                            <script>
+                                $('#checkbox').click(function(){
+                                    if ($(this).is(':checked')){
+                                        $('#sterText').show(100);
+                                    } else {
+                                        $('#sterText').hide(100);
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
-                    <div class="row">
+
+                    <div class="row" id="sterText" style="display: none;">
                         <div class="col-3">
                             <label for="sterDate">Дата стерилизации</label>
                             <input required id="sterDate" class=" form-control" type="date" name="" placeholder="" value="">
@@ -159,6 +188,7 @@
                             <input required id="sterPlace" class="form-control" type="text" name="sterPlace" maxlength="" placeholder="" value="">
                         </div>
                     </div>
+
                 </div>
 
 
@@ -220,7 +250,26 @@
                        </div>
                    </div>
                    <div class="h4 mt-3">Юридическое лицо</div>
-                   <div class="row">
+
+
+                   <!-- Выбор лица -->
+                   <div class="col">
+                       <div class="row">
+                           <div class="col-12"></div>
+                       </div>
+                       <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                           <label class="form-check-label" for="inlineRadio1">Юридическое лицо</label>
+                       </div>
+
+
+                       <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                           <label class="form-check-label" for="inlineRadio2">Физическое лицо</label>
+                       </div>
+                   </div>
+
+                   <div class="row" id="urFaceBl">
                        <div class="col">
                            <label for="urFace">Юридическое лицо</label>
                            <input required id="urFace" class=" form-control" type="text" name="urFace" placeholder="" value="">
@@ -322,7 +371,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-3 border-bottom my-4">
-                            <h4>Сведения о вакцинации</h4>
+                            <h4>Медицинская карточка животного</h4>
                         </div>
                     </div>
                     <div class="row">

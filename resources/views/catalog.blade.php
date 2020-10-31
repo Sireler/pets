@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-5" style="color: #cc2222"><i class="fas fa-paw mr-2"></i>Каталог</h1>
+        <div class="row border-bottom mb-5">
+            <h1 class="ml-4" style="color: #cc2222"><i class="fas fa-paw mr-2"></i>Каталог</h1>
+        </div>
     <div class="row">
 
         <!-- Sidebar -->
@@ -31,15 +33,15 @@
                         <select name="age" class="form-control" id="searchAge">
                             <option
                                 @if(request()->get('age') == 1) selected @endif>
-                                1
+                                1 год
                             </option>
                             <option
                                 @if(request()->get('age') == 2) selected @endif>
-                                2
+                                2 года
                             </option>
                             <option
                                 @if(request()->get('age') == 3) selected @endif>
-                                3
+                                3 года
                             </option>
                         </select>
                     </li>
