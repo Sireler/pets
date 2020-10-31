@@ -31,15 +31,15 @@
                     <li class="border-bottom pb-2">
                         <label for="searchAge">Возраст животного</label>
                         <select name="age" class="form-control" id="searchAge">
-                            <option
+                            <option value="1"
                                 @if(request()->get('age') == 1) selected @endif>
                                 1 год
                             </option>
-                            <option
+                            <option value="2"
                                 @if(request()->get('age') == 2) selected @endif>
                                 2 года
                             </option>
-                            <option
+                            <option value="3"
                                 @if(request()->get('age') == 3) selected @endif>
                                 3 года
                             </option>
