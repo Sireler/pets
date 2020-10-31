@@ -23,7 +23,56 @@ Route::get('/home', 'HomeController@index')
 
 
 
+Route::prefix('directories')->group(function () {
 
+    Route::get('operating_organizations', 'Directories\\OperatingOrganizationController@index')->name('directories.organizations');
+    Route::put('operating_organizations', 'Directories\\OperatingOrganizationController@update')->name('directories.organizations.update');
+    Route::post('operating_organizations', 'Directories\\OperatingOrganizationController@store')->name('directories.organizations.store');
+    Route::post('operating_organizations/{id}', 'Directories\\OperatingOrganizationController@destroy')->name('directories.organizations.delete');
+
+    Route::get('pet_types', 'Directories\\PetTypeController@index')->name('directories.pet_types');
+    Route::put('pet_types', 'Directories\\PetTypeController@update')->name('directories.pet_types.update');
+    Route::post('pet_types', 'Directories\\PetTypeController@store')->name('directories.pet_types.store');
+    Route::post('pet_types/{id}', 'Directories\\PetTypeController@destroy')->name('directories.pet_types.delete');
+
+    Route::get('gender_types', 'Directories\\GenderTypeController@index')->name('directories.gender_types');
+    Route::put('gender_types', 'Directories\\GenderTypeController@update')->name('directories.gender_types.update');
+    Route::post('gender_types', 'Directories\\GenderTypeController@store')->name('directories.gender_types.store');
+    Route::post('gender_types/{id}', 'Directories\\GenderTypeController@destroy')->name('directories.gender_types.delete');
+
+    Route::get('ear_types', 'Directories\\EarTypeController@index')->name('directories.ear_types');
+    Route::put('ear_types', 'Directories\\EarTypeController@update')->name('directories.ear_types.update');
+    Route::post('ear_types', 'Directories\\EarTypeController@store')->name('directories.ear_types.store');
+    Route::post('ear_types/{id}', 'Directories\\EarTypeController@destroy')->name('directories.ear_types.delete');
+
+    Route::get('tail_types', 'Directories\\TailTypeController@index')->name('directories.tail_types');
+    Route::put('tail_types', 'Directories\\TailTypeController@update')->name('directories.tail_types.update');
+    Route::post('tail_types', 'Directories\\TailTypeController@store')->name('directories.tail_types.store');
+    Route::post('tail_types/{id}', 'Directories\\TailTypeController@destroy')->name('directories.tail_types.delete');
+
+    Route::get('death_types', 'Directories\\DeathTypeController@index')->name('directories.death_types');
+    Route::put('death_types', 'Directories\\DeathTypeController@update')->name('directories.death_types.update');
+    Route::post('death_types', 'Directories\\DeathTypeController@store')->name('directories.death_types.store');
+    Route::post('death_types/{id}', 'Directories\\DeathTypeController@destroy')->name('directories.death_types.delete');
+
+    Route::get('left_types', 'Directories\\LeftTypeController@index')->name('directories.left_types');
+    Route::put('left_types', 'Directories\\LeftTypeController@update')->name('directories.left_types.update');
+    Route::post('left_types', 'Directories\\LeftTypeController@store')->name('directories.left_types.store');
+    Route::post('left_types/{id}', 'Directories\\LeftTypeController@destroy')->name('directories.left_types.delete');
+
+    Route::get('euthanasia_types', 'Directories\\EuthanasiaTypeController@index')->name('directories.euthanasia_types');
+    Route::put('euthanasia_types', 'Directories\\EuthanasiaTypeController@update')->name('directories.euthanasia_types.update');
+    Route::post('euthanasia_types', 'Directories\\EuthanasiaTypeController@store')->name('directories.euthanasia_types.store');
+    Route::post('euthanasia_types/{id}', 'Directories\\EuthanasiaTypeController@destroy')->name('directories.euthanasia_types.delete');
+
+    Route::get('shelters', 'Directories\\ShelterController@index')->name('directories.shelters');
+    Route::put('shelters', 'Directories\\ShelterController@update')->name('directories.shelters.update');
+    Route::post('shelters', 'Directories\\ShelterController@store')->name('directories.shelters.store');
+    Route::post('shelters/{id}', 'Directories\\ShelterController@destroy')->name('directories.shelters.delete');
+
+
+
+});
 
 
 
