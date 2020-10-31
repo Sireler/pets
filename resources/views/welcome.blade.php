@@ -54,7 +54,7 @@
                             @for ($i = 0; $i < 6; $i++)
                                 <div class="col-md-4 pb-3">
                                     <div class="card">
-                                        <img class="card-img-top" src="img/6.jpg" alt="Card image cap">
+                                        <img class="card-img-top" src="{{ asset('../img/3/1197.jpg') }}" alt="Card image cap">
                                         <div class="card-body">
                                             <h5 class="card-title">Джони</h5>
                                             <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
@@ -64,7 +64,7 @@
                                         <div class="card-body">
                                             <div class="row justify-content-around text-center">
                                                 <div class="col"><a href="#" class="card-link btn btn-primary w-100">Подробнее</a></div>
-                                                <div class="col"><a href="#" class="card-link btn btn-primary w-100">Карты</a></div>
+                                                <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -91,21 +91,69 @@
                                     <h5 class="">Адреса приютов</h5>
                                     <div class="col-auto">
                                         <ul class="list-unstyled">
-                                            <li class=" font-weight-light mb-2" style="font-size: 1.5rem"><i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>Lorem ipsum dolor sit amet</li>
-                                            <li class=" font-weight-light mb-2" style="font-size: 1.5rem"><i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>Lorem ipsum dolor sit amet</li>
-                                            <li class=" font-weight-light mb-2" style="font-size: 1.5rem"><i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>Lorem ipsum dolor sit amet</li>
-                                            <li class=" font-weight-light mb-2" style="font-size: 1.5rem"><i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>Lorem ipsum dolor sit amet</li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Щербинка»: г.Москва, ул.Брусилова, вл.32, стр.1-5
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Некрасовка»: г.Москва, ул.2-я Вольская, вл.17 стр.3
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Печатники»: г.Москва, Проектируемый проезд №5112, вл.2\1
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Солнцево»: г.Москва, ул. Родниковая, вл.26
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «GETDOG»: г.Москва, Машкинское шоссе, вл. 4
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Молжаниново»: г.Москва, Проектируемый проезд, 727
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Искра»: г.Москва, ул.Искры, вл. 23А
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Красная сосна»: г.Москва, ул.Красной Сосны, вл. 30, стр.4
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Дубовая роща»: г.Москва, проезд Дубовой Рощи, вл.23-25
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                Кожуховский приют: г.Москва, ул. Пехорская 1Б, с.6
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Бирюлево»: г.Москва, Востряковский пр-д, вл.10 А
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Зеленоград»: г.Москва, Зеленоград, Фирсановское ш., вл.5А
+                                            </li>
+                                            <li class=" font-weight-light mb-2" style="font-size: 1.2rem">
+                                                <i class="fas fa-paw mr-1" style=" font-size: 1rem ;color: #cc2222"></i>
+                                                 «Зоорассвет»: г.Москва, ул.Рассветная аллея, влд.10
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div class="col-auto">
                                     <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
-                                    <div style="width: 718px;height: 403px" id="map1osgc0bf"></div>
-                                    <script>function YandexReadyHandler1osgc0bf() {
-                                            var map = new ymaps.Map("map1osgc0bf", {
-                                                center: [55.76399687812535, 37.62767271307052],
-                                                zoom: 14,
+                                    <div style="width: 718px;height: 403px" id="mapbzq2xxco"></div>
+                                    <script>function YandexReadyHandlerbzq2xxco() {
+                                            var map = new ymaps.Map("mapbzq2xxco", {
+                                                center: [55.76162565139989, 37.90831962285752],
+                                                zoom: 9,
                                                 controls: ["zoomControl","typeSelector"],
                                                 type: "yandex#map"
                                             },{
@@ -114,48 +162,186 @@
                                             map.geoObjects.add(new ymaps.GeoObject({
                                                     geometry: {
                                                         type: "Point",
-                                                        coordinates: [55.75973818285713,37.616772215633986],
+                                                        coordinates: [55.4987008921379,37.59909521639421],
                                                         hideIconOnBalloonOpen: false
                                                     },
                                                     properties: {
-                                                        balloonContent:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B0"),
-                                                        iconCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B01"),
-                                                        hintCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B01"),
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D1%83%D0%BB.%D0%91%D1%80%D1%83%D1%81%D0%B8%D0%BB%D0%BE%D0%B2%D0%B0%2C%20%D0%B2%D0%BB.32%2C%20%D1%81%D1%82%D1%80.1-5%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%A9%D0%B5%D1%80%D0%B1%D0%B8%D0%BD%D0%BA%D0%B0%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%A9%D0%B5%D1%80%D0%B1%D0%B8%D0%BD%D0%BA%D0%B0%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
                                                     }
                                                 }, {
-                                                    preset: "islands#blueDotIcon",
+                                                    preset: "islands#blueCircleIcon",
                                                 })
                                             );    map.geoObjects.add(new ymaps.GeoObject({
                                                     geometry: {
                                                         type: "Point",
-                                                        coordinates: [55.76312581936508,37.63162092474044],
+                                                        coordinates: [55.6877836450722,37.93434931349181],
                                                         hideIconOnBalloonOpen: false
                                                     },
                                                     properties: {
-                                                        balloonContent:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B0"),
-                                                        iconCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B02"),
-                                                        hintCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B02"),
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.2-%D1%8F%0A%20%20%D0%92%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2C%20%D0%B2%D0%BB.17%20%D1%81%D1%82%D1%80.3%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%9D%D0%B5%D0%BA%D1%80%D0%B0%D1%81%D0%BE%D0%B2%D0%BA%D0%B0%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%9D%D0%B5%D0%BA%D1%80%D0%B0%D1%81%D0%BE%D0%B2%D0%BA%D0%B0%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
                                                     }
                                                 }, {
-                                                    preset: "islands#blueDotIcon",
+                                                    preset: "islands#blueCircleIcon",
                                                 })
                                             );    map.geoObjects.add(new ymaps.GeoObject({
                                                     geometry: {
                                                         type: "Point",
-                                                        coordinates: [55.75620504709592,37.644581358700385],
+                                                        coordinates: [55.668069167632034,37.70308086637092],
                                                         hideIconOnBalloonOpen: false
                                                     },
                                                     properties: {
-                                                        balloonContent:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B0"),
-                                                        iconCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B03"),
-                                                        hintCaption:decodeURIComponent("%D0%A2%D0%BE%D1%87%D0%BA%D0%B03"),
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D1%83%D0%B5%D0%BC%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%20%E2%84%965112%2C%20%D0%B2%D0%BB.2%5C1%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D0%BD%D0%B8%D0%BA%D0%B8%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%9F%D0%B5%D1%87%D0%B0%D1%82%D0%BD%D0%B8%D0%BA%D0%B8%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
                                                     }
                                                 }, {
-                                                    preset: "islands#blueDotIcon",
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.62474019486091,37.376067699771276],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%0A%20%20%D0%A0%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D0%B2%D0%BB.26%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%A1%D0%BE%D0%BB%D0%BD%D1%86%D0%B5%D0%B2%D0%BE%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%A1%D0%BE%D0%BB%D0%BD%D1%86%D0%B5%D0%B2%D0%BE%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.91305668181759,37.38696355323405],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D0%9C%D0%B0%D1%88%D0%BA%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%81%D1%81%D0%B5%2C%20%D0%B2%D0%BB.%204%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%ABGETDOG%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%ABGETDOG%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.86186550119682,37.65359089040475],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%D0%98%D1%81%D0%BA%D1%80%D1%8B%2C%0A%20%20%D0%B2%D0%BB.%2023%D0%90%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%98%D1%81%D0%BA%D1%80%D0%B0%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%98%D1%81%D0%BA%D1%80%D0%B0%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.84281982064802,37.67921466798388],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D1%83%D0%BB.%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B9%20%D0%A1%D0%BE%D1%81%D0%BD%D1%8B%2C%20%D0%B2%D0%BB.%2030%2C%20%D1%81%D1%82%D1%80.4%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F%20%D1%81%D0%BE%D1%81%D0%BD%D0%B0%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F%20%D1%81%D0%BE%D1%81%D0%BD%D0%B0%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.81764552069543,37.605137403260656],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4%0A%20%20%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%A0%D0%BE%D1%89%D0%B8%2C%20%D0%B2%D0%BB.23-25%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%80%D0%BE%D1%89%D0%B0%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%80%D0%BE%D1%89%D0%B0%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.717277534585314,37.93000700481031],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D1%83%D0%BB.%20%D0%9F%D0%B5%D1%85%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F%201%D0%91%2C%20%D1%81.6%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%D0%9A%D0%BE%D0%B6%D1%83%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D1%8E%D1%82"),
+                                                        hintCaption:decodeURIComponent("%D0%9A%D0%BE%D0%B6%D1%83%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%B8%D1%8E%D1%82"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.583452385948455,37.61609916879651],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D0%92%D0%BE%D1%81%D1%82%D1%80%D1%8F%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80-%D0%B4%2C%20%D0%B2%D0%BB.10%20%D0%90%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D0%BE%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%91%D0%B8%D1%80%D1%8E%D0%BB%D0%B5%D0%B2%D0%BE%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.98311075571534,37.24845780795516],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%2C%20%D0%A4%D0%B8%D1%80%D1%81%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88.%2C%20%D0%B2%D0%BB.5%D0%90%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%C2%AB%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%C2%AB%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
+                                                })
+                                            );    map.geoObjects.add(new ymaps.GeoObject({
+                                                    geometry: {
+                                                        type: "Point",
+                                                        coordinates: [55.739815293909864,37.79821580919258],
+                                                        hideIconOnBalloonOpen: false
+                                                    },
+                                                    properties: {
+                                                        balloonContent:decodeURIComponent("%3Cp%3E%0A%20%20%D0%B3.%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%0A%20%20%D1%83%D0%BB.%D0%A0%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82%D0%BD%D0%B0%D1%8F%20%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F%2C%20%D0%B2%D0%BB%D0%B4.10%0A%3C%2Fp%3E"),
+                                                        iconCaption:decodeURIComponent("%D0%9F%D1%80%D0%B8%D1%8E%D1%82%20%C2%AB%D0%97%D0%BE%D0%BE%D1%80%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82%C2%BB"),
+                                                        hintCaption:decodeURIComponent("%D0%9F%D1%80%D0%B8%D1%8E%D1%82%20%C2%AB%D0%97%D0%BE%D0%BE%D1%80%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82%C2%BB"),
+                                                        iconContent:"<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABwklEQVQ4T6WTPWgUURDHf/MuXjBBxK9asBEkiGiVTgkoCAEVLayMAUNAEAQLs3e79/Zu31lqY+FXoxJQEA0EEiGNlYWVpY2ioBJBUQTB3N2bsJtdz8tHIU45M795/3n/94T/CPmbbTQaezveTCO8x7cmrbVfrL22B+NvZ33eTFg79bZgemDbaD5G9UxWFHlEZ2kMs2kWGFnJ6R0bVifWh+tuHjiWFz+JMq7CA2DXSk5nbVQd3QBOHEiQFxcRmVTVuwI7UtEiXKmFlet/4CRJdre9pImfeHFq9KHAIeDpr/6+8wO/2/eBE8ALPJcwVACDb10UGzuLUMunPcO3zpbL5cEgCL6lOtNNm83m9h/GtDcvdeaA4XyFNfB3gxyPouDlagfj2B1RYQbY0oWtO4jhObAzlS7KSQxDqpmabcAicFWUzyo8AQaBDyXxRzOr4tiNqOEG6GtU+oFT2V7d8Ci3MDqAcsBQuhBFU696fa4nMUh1FViMaIlwuRZWbq6xylq3H8NC19N1320q93AYhu+yN1O02LobA+5tcGrR1gbO2agy3QPnt5leyFbgI8gM+Deo7EM4nSpS+FpCRgs3enb+1w+2DId1njYFJTdyAAAAAElFTkSuQmCC'/>",
+                                                    }
+                                                }, {
+                                                    preset: "islands#blueCircleIcon",
                                                 })
                                             );    return map;
                                         }</script>
-                                    <script src="//api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru&onload=YandexReadyHandler1osgc0bf" type="text/javascript"></script>
+                                    <script src="//api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru&onload=YandexReadyHandlerbzq2xxco" type="text/javascript"></script>
                                     <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
                                 </div>
                             </div>
@@ -173,22 +359,13 @@
                                 <div class="col-8">
                                     <div class="row">
                                         <div class="col">
-                                            <h4>Бла бла бла!</h4>
-                                            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias asperiores,
-                                        facilis illo iure, libero molestias quae ratione repellendus repudiandae temporibus
-                                        unde voluptate voluptatem. Dolorem exercitationem fuga reprehenderit sit? Cum.</span>
-                                                <span>Consectetur, dicta dolores nesciunt quidem rem unde voluptates. Ab ad aliquid,
-                                            amet culpa cumque cupiditate, esse eum hic illo inventore itaque maxime mollitia
-                                            nobis obcaecati quis, ratione voluptatem. Incidunt, sequi.</span><span>Adipisci
-                                            alias consequuntur cum cumque cupiditate debitis deserunt ducimus earum enim error
-                                            esse explicabo harum, hic ipsam iusto molestiae nam numquam porro quia quod quos
-                                            repellendus repudiandae tempora ullam veniam?</span><span>Accusamus accusantium at
-                                            delectus nihil non nulla numquam officia quae vel? Corporis distinctio dolor libero
-                                            necessitatibus quae quaerat quod saepe sapiente velit voluptatibus. Accusamus beatae,
-                                            dolorum facere odit similique sunt.</span><span>Ad animi cum earum ipsa iusto laudantium
-                                            minus, numquam quaerat quos repellendus sunt, vel voluptas. At dolorum facere incidunt,
-                                            inventore natus provident qui voluptates! Ex fugit illo labore nihil quo.</span></p>
-
+                                            <h4>Вы взяли собаку из приюта: первые шаги</h4>
+                                            <p>
+                                                1. Если у вас есть дети, подготовьте их заранее. Понятно, что это трудно, сохранять спокойствие, когда в доме появляется такое пушистое счастье, но это необходимо. Собаки из приютов очень редко видят детей и для них это непонятные существа, которые по собачьим меркам ведут себя неадекватно. Прыгают, орут, тискают. Объясните, что все это будет, но когда собака привыкнет. Вообще, лучше всего познакомить детей с собакой в приюте на прогулке. Пусть дети для нее не будут сюрпризом.
+                                            </p>
+                                            <p>
+                                                2. Если у вас есть кошка, поместите ее в переноску и покажите собаке. Если собака будет проявлять слишком повышенную возбудимость, шикните на нее, и отстраните от переноски, пусть поймет: кошка принадлежит вам и вы не позволите ее обижать. Если собака спокойна. Выпустите кошку и , постоянно контролируя ситуацию, познакомьте животных. Кошка, скорее всего, захочет залезть повыше, например на диван, собаке не разрешайте, она может только сидеть возле дивана и наблюдать. Следите за уровнем возбуждения собаки. Она должна понимать: кошка главнее, старшая здесь она и собака не может ее трогать...
+                                            </p>
 
                                             <div class="row justify-content-end">
                                                 <div class="col-auto pt-4 border-bottom">
@@ -203,21 +380,12 @@
                                     <div class="row">
 
                                         <div class="col">
-                                            <h4>Бла бла бла!</h4>
-                                            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias asperiores,
-                                        facilis illo iure, libero molestias quae ratione repellendus repudiandae temporibus
-                                        unde voluptate voluptatem. Dolorem exercitationem fuga reprehenderit sit? Cum.</span>
-                                                <span>Consectetur, dicta dolores nesciunt quidem rem unde voluptates. Ab ad aliquid,
-                                            amet culpa cumque cupiditate, esse eum hic illo inventore itaque maxime mollitia
-                                            nobis obcaecati quis, ratione voluptatem. Incidunt, sequi.</span><span>Adipisci
-                                            alias consequuntur cum cumque cupiditate debitis deserunt ducimus earum enim error
-                                            esse explicabo harum, hic ipsam iusto molestiae nam numquam porro quia quod quos
-                                            repellendus repudiandae tempora ullam veniam?</span><span>Accusamus accusantium at
-                                            delectus nihil non nulla numquam officia quae vel? Corporis distinctio dolor libero
-                                            necessitatibus quae quaerat quod saepe sapiente velit voluptatibus. Accusamus beatae,
-                                            dolorum facere odit similique sunt.</span><span>Ad animi cum earum ipsa iusto laudantium
-                                            minus, numquam quaerat quos repellendus sunt, vel voluptas. At dolorum facere incidunt,
-                                            inventore natus provident qui voluptates! Ex fugit illo labore nihil quo.</span></p>
+                                            <h4>Переезд животного</h4>
+                                            <p>
+                                                Переезд — стресс для животного, но все-таки его нужно помыть и обработать от насекомых. Многие владельцы дают новым питомцам противоглистные средства, но этого лучше не делать без назначения врача.
+
+                                                После всех процедур собаке или кошке нужно дать время освоиться в доме — пусть она походит по комнатам и все исследует. При этом нужно особенно внимательно следить за ее поведением и тем, как она ест и ходит в туалет. На следующий день питомца можно вести к ветеринару. Врач должен осмотреть животное и взять необходимые анализы, чтобы удостовериться, что у вашего нового друга нет инфекций и он здоров. Если вы взяли питомца с улицы, а не из приюта, то в клинике ему заведут ветпаспорт, который отдадут владельцу животного после первой вакцинации. В том случае, если врач обнаружил у животного паразитов, ему потребуется средство для дегельминтизации — оно продается в ветаптеке или зоомагазине...
+                                            </p>
 
 
                                             <div class="row justify-content-end">
@@ -237,51 +405,64 @@
                                     <div class="row justify-content-center border-bottom mb-4">
                                         <h4>Часто задаваемые вопросы</h4>
                                     </div>
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link-grey" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Разворачиваемая панель #1
-                                                    </button>
-                                                </h5>
+                                    <ul class="list-unstyled">
+                                        <li class="pt-1">
+                                            <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseQ" role="button" aria-expanded="false" aria-controls="collapseSearch">
+                        <span class="row">
+                            <span class="col justify-content-center">
+                               А зачем...?
+                            </span>
+                        </span>
+                                            </a>
+                                            <div class="collapse" id="collapseQ">
+                                                <div class="card card-body border-right-0 border-left-0 border-top-0" style="border-radius: 0">
+                                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                                                        id itaque molestias natus odio quaerat sequi. A ab aspernatur,
+                                                        distinctio earum eius eum eveniet nulla praesentium repellendus
+                                                        repudiandae similique sunt!
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </li>
 
-                                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        <li class="pt-1">
+                                            <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseQ1" role="button" aria-expanded="false" aria-controls="collapseSearch">
+                        <span class="row">
+                            <span class="col justify-content-center">
+                               А что...?
+                            </span>
+                        </span>
+                                            </a>
+                                            <div class="collapse" id="collapseQ1">
+                                                <div class="card card-body border-right-0 border-left-0 border-top-0" style="border-radius: 0">
+                                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                                                        id itaque molestias natus odio quaerat sequi. A ab aspernatur,
+                                                        distinctio earum eius eum eveniet nulla praesentium repellendus
+                                                        repudiandae similique sunt!
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link-grey collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Разворачиваемая панель #2
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </li>
+
+                                        <li class="pt-1">
+                                            <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseQ2" role="button" aria-expanded="false" aria-controls="collapseSearch">
+                        <span class="row">
+                            <span class="col justify-content-center">
+                               А как...?
+                            </span>
+                        </span>
+                                            </a>
+                                            <div class="collapse" id="collapseQ2">
+                                                <div class="card card-body border-right-0 border-left-0 border-top-0" style="border-radius: 0">
+                                                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
+                                                        id itaque molestias natus odio quaerat sequi. A ab aspernatur,
+                                                        distinctio earum eius eum eveniet nulla praesentium repellendus
+                                                        repudiandae similique sunt!
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link-grey collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Разворачиваемая панель #3
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
 
