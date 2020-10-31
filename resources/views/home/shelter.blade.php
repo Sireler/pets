@@ -35,7 +35,7 @@
                                         @foreach($petShelter as $ps)
                                             <tr>
                                                 <td>
-                                                    <a href="#">{{ $ps->pet->card_number }}</a>
+                                                    <a href="{{ route('home.shelter.petCard', ['id' => $ps->shelter_id, 'pet' => $ps->pet->id]) }}">{{ $ps->pet->card_number }}</a>
                                                 </td>
                                                 <td>{{ $ps->pet->type }}</td>
                                                 <td>{{ $ps->pet->name }}</td>
