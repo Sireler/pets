@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Справочник: ЭКПЛУАТИЗИРУЮЩИЕ ОРГАНИЗАЦИИ</div>
+                    <div class="card-header">Справочник: ВИДЫ ЖИВОТНЫХ</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -20,40 +20,40 @@
                         @endif
 
 
-                            <table id="table_org" class="table table-primary">
-                                <thead>
+                        <table id="table_org" class="table table-primary">
+                            <thead>
+                            <tr>
+                                <th>Наименование</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($types as $type)
                                 <tr>
-                                    <th>Наименование</th>
-                                    <th></th>
+                                    <td>{{ $type->name }}</td>
+                                    <td>
+                                        <button class="edit-table btn mb-1"
+                                                data-id="{{ $type->id }}"
+                                                data-org="{{ $type->name }}"
+                                                data-toggle="modal"
+                                                data-target="#exampleModal"
+                                                href="#">
+                                            Редактировать
+                                        </button>
+                                        <form method="POST" action="{{ route('directories.pet_types.delete', $type->id) }}">
+                                            @csrf
+                                            <button class="btn">Удалить</button>
+                                        </form>
+
+                                    </td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($organizations as $org)
-                                    <tr>
-                                        <td>{{ $org->name }}</td>
-                                        <td>
-                                            <button class="edit-table btn mb-1"
-                                               data-id="{{ $org->id }}"
-                                               data-org="{{ $org->name }}"
-                                               data-toggle="modal"
-                                               data-target="#exampleModal"
-                                               href="#">
-                                                Редактировать
-                                            </button>
-                                            <form method="POST" action="{{ route('directories.organizations.delete', $org->id) }}">
-                                                @csrf
-                                                <button class="btn">Удалить</button>
-                                            </form>
+                            @endforeach
+                            </tbody>
+                        </table>
 
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-                                Создать
-                            </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                            Создать
+                        </button>
 
                     </div>
                 </div>
@@ -84,7 +84,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Эксплуатирующие организации</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Виды животных</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -92,7 +92,7 @@
                 <div class="modal-body">
 
 
-                    <form method="POST" action="{{ route('directories.organizations.update') }}">
+                    <form method="POST" action="{{ route('directories.pet_types.update') }}">
                         @method('PUT')
                         @csrf
                         <input type="text" name="id" hidden id="org-id">
@@ -120,7 +120,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Эксплуатирующие организации</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Виды животных</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -128,7 +128,7 @@
                 <div class="modal-body">
 
 
-                    <form method="POST" action="{{ route('directories.organizations.store') }}">
+                    <form method="POST" action="{{ route('directories.pet_types.store') }}">
                         @csrf
                         <div class="form-group">
                             <label for="org-name">Наименование</label>

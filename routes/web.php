@@ -30,6 +30,11 @@ Route::prefix('directories')->group(function () {
     Route::post('operating_organizations', 'Directories\\OperatingOrganizationController@store')->name('directories.organizations.store');
     Route::post('operating_organizations/{id}', 'Directories\\OperatingOrganizationController@destroy')->name('directories.organizations.delete');
 
+    Route::get('pet_types', 'Directories\\PetTypeController@index')->name('directories.pet_types');
+    Route::put('pet_types', 'Directories\\PetTypeController@update')->name('directories.pet_types.update');
+    Route::post('pet_types', 'Directories\\PetTypeController@store')->name('directories.pet_types.store');
+    Route::post('pet_types/{id}', 'Directories\\PetTypeController@destroy')->name('directories.pet_types.delete');
+
 });
 
 
