@@ -70,6 +70,11 @@ Route::prefix('directories')->group(function () {
     Route::post('shelters', 'Directories\\ShelterController@store')->name('directories.shelters.store');
     Route::post('shelters/{id}', 'Directories\\ShelterController@destroy')->name('directories.shelters.delete');
 
+    Route::get('breeds', 'Directories\\BreedTypeController@index')->name('directories.breed_types');
+    Route::put('breeds', 'Directories\\BreedTypeController@update')->name('directories.breed_types.update');
+    Route::post('breeds', 'Directories\\BreedTypeController@store')->name('directories.breed_types.store');
+    Route::post('breeds/{id}', 'Directories\\BreedTypeController@destroy')->name('directories.breed_types.delete');
+
 
 
 });
