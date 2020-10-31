@@ -75,6 +75,11 @@ Route::prefix('directories')->group(function () {
     Route::post('breeds', 'Directories\\BreedTypeController@store')->name('directories.breed_types.store');
     Route::post('breeds/{id}', 'Directories\\BreedTypeController@destroy')->name('directories.breed_types.delete');
 
+    Route::get('colors', 'Directories\\ColorTypeController@index')->name('directories.color_types');
+    Route::put('colors', 'Directories\\ColorTypeController@update')->name('directories.color_types.update');
+    Route::post('colors', 'Directories\\ColorTypeController@store')->name('directories.color_types.store');
+    Route::post('colors/{id}', 'Directories\\ColorTypeController@destroy')->name('directories.color_types.delete');
+
 
 
 });
