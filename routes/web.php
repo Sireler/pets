@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $petTypes = \App\PetType::all();
+
+    return view('welcome', [
+        'petTypes' => $petTypes
+    ]);
 });
 
 Auth::routes();

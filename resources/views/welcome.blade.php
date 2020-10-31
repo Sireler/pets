@@ -1,6 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="container">
+        <!-- header меню -->
+        <div class="row pb-2 pt-4 border-bottom">
+            <div class="col-auto">
+                <a class="btn-link-mos" href="{{ url('/') }}">
+                    Главная
+                </a>
+            </div>
+            <div class="col-auto">
+                <a class="btn-link-mos" href="#">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class=" btn-link-mos" data-toggle="dropdown">Каталог</a>
+                            <ul class="dropdown-menu">
+                                <li>Выберите питомца:</li>
+                                @foreach($petTypes as $pt)
+                                    <li><a class="btn-link-mos" href="#">{{ $pt->name }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    </ul>
+
+                </a>
+            </div>
+        </div>
+
     <div class="row">
 {{--        <img class="img-fluid"--}}
 {{--             src=""--}}

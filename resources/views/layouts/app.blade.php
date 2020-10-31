@@ -63,33 +63,6 @@
             </div>
             <!-- header верхняя строка конец -->
 
-            <div class="container">
-                <!-- header меню -->
-                <div class="row pb-2 pt-4 border-bottom">
-                    <div class="col-auto">
-                        <a class="btn-link-mos" href="{{ url('/') }}">
-                            Главная
-                        </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="btn-link-mos" href="#">
-                            <ul class="nav">
-                                <li class="dropdown">
-                                    <a href="#" class=" btn-link-mos" data-toggle="dropdown">Каталог</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="btn-link-mos" href="#">Собаки</a></li>
-                                        <li><a class="btn-link-mos" href="#">Кошки</a></li>
-                                        <li><a class="btn-link-mos" href="#">Котята</a></li>
-                                        <li><a class="btn-link-mos" href="#">Щенки</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                        </a>
-                    </div>
-                </div>
-                <!-- Конец header меню -->
-            </div>
         </nav>
 
         <main class="py-4">
