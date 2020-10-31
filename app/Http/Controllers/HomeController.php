@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\PetShelter;
 use App\Role\UserRole;
+use App\Shelter;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -35,6 +37,27 @@ class HomeController extends Controller
 
         return view('home', [
             'user' => $user
+        ]);
+    }
+
+    public function shelters(Request $request)
+    {
+        $shelters = Shelter::all();
+
+        return view('home.shelters', [
+            'shelters' => $shelters
+        ]);
+    }
+
+    public function shelter(Request $request, $id)
+    {
+        $shelter = Shelter::where('id', $id)->first();
+
+        $petShelter = PetShelter::where('shelter_id', $shelter->id)->with('pet')->get();
+
+        return view('home.shelter', [
+            'shelter' => $shelter,
+            'petShelter' => $petShelter
         ]);
     }
 }

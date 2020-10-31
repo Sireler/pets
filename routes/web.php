@@ -101,7 +101,8 @@ Route::prefix('catalog')->group(function () {
 
 
 
-
+Route::get('/home/shelters', 'HomeController@shelters')->name('home.shelters');
+Route::get('/home/shelter/{id}', 'HomeController@shelter')->name('home.shelter');
 
 
 

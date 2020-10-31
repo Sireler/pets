@@ -25,6 +25,7 @@
                         <div class="col-md-6">
                             <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Справочники системы</a>
                             <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Реестр животных</a>
+                            <a href="{{ route('home.shelters') }}" class="btn btn-primary my-3">Список приютов</a>
                         </div>
                         <div class="col-md-6 text-right">
                             <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Аналитика</a>
