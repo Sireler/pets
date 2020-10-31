@@ -18,7 +18,7 @@
                             <ul class="dropdown-menu">
                                 <li>Выберите питомца:</li>
                                 @foreach($petTypes as $pt)
-                                    <li><a class="btn-link-mos" href="#">{{ $pt->name }}</a></li>
+                                    <li><a class="btn-link-mos" href="{{ route('catalog.findByPetType', ['pet_type' => $pt->id]) }}">{{ $pt->name }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

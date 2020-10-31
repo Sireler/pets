@@ -17,4 +17,9 @@ class Pet extends Model
         'date_arrived',
         'date_adopted'
     ];
+
+    public function shelter()
+    {
+        return $this->hasOne(PetShelter::class, 'pet_id', 'id');
+    }
 }

@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="row justify-content-between pt-1">
                     <div class="col-auto" style="color: #cc2222; ">
-                        <strong>mos.ru</strong>
+                        <strong><a style="color: #cc2222;" class="btn-link-mos" href="/">mos.ru</a></strong>
                         <b class="font-weight-normal"> База животных без владельцев</b>
                     </div>
                     @guest

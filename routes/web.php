@@ -89,11 +89,15 @@ Route::prefix('directories')->group(function () {
     Route::post('wools', 'Directories\\WoolTypeController@store')->name('directories.wool_types.store');
     Route::post('wools/{id}', 'Directories\\WoolTypeController@destroy')->name('directories.wool_types.delete');
 
+});
+
+Route::prefix('catalog')->group(function () {
+
+//    Route::get('', 'CatalogController@index')->name('catalog');
+    Route::get('', 'CatalogController@findByPetType')->name('catalog.findByPetType');
 
 
 });
-
-
 
 
 

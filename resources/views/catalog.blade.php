@@ -11,47 +11,42 @@
             <h3>Фильтры</h3>
             <ul class="list-unstyled">
 
-                <li class="border-bottom pb-2">
-                    <label for="searchType">Вид животного</label>
-                    <select class="form-control" id="searchType">
-                        <option>Все</option>
-                        <option>Собака</option>
-                        <option>Щенок</option>
-                        <option>Кошка</option>
-                        <option>Котёнок</option>
-                    </select>
-                </li>
+                <form action="{{ route('catalog.findByPetType') }}">
 
-                <li class="border-bottom pb-2">
-                    <label for="searchAge">Возраст животного</label>
-                    <select class="form-control" id="searchAge">
-                        <option>Все</option>
-                        <option>До 3-х лет</option>
-                        <option>От 3-х лет</option>
-                        <option>До 5-и лет</option>
-                        <option>От 5-и лет</option>
-                    </select>
-                </li>
+                    <li class="border-bottom pb-2">
+                        <label for="searchType">Вид животного</label>
+                        <select name="pet_type" class="form-control" id="searchType">
+                            @foreach($petTypes as $pt)
+                                <option
+                                    @if($pt->id == request()->get('pet_type')) selected @endif
+                                    value="{{ $pt->id }}">
+                                        {{ $pt->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </li>
 
-                <li class="border-bottom pb-2">
-                    <label for="searchSize">Размер животного</label>
-                    <select class="form-control" id="searchSize">
-                        <option>Все</option>
-                        <option>Малый</option>
-                        <option>Средний</option>
-                        <option>Крупный</option>
-                        <option>Большой</option>
-                    </select>
-                </li>
+                    <li class="border-bottom pb-2">
+                        <label for="searchAge">Возраст животного</label>
+                        <select name="age" class="form-control" id="searchAge">
+                            <option
+                                @if(request()->get('age') == 1) selected @endif>
+                                1
+                            </option>
+                            <option
+                                @if(request()->get('age') == 2) selected @endif>
+                                2
+                            </option>
+                            <option
+                                @if(request()->get('age') == 3) selected @endif>
+                                3
+                            </option>
+                        </select>
+                    </li>
 
-                <li class="">
-                    <label for="searchSoc">Статус животного</label>
-                    <select class="form-control" id="searchSoc">
-                        <option>Все</option>
-                        <option>Готов к социализации</option>
-                        <option>Не готов к социализации</option>
-                    </select>
-                </li>
+                    <button type="submit" class="btn btn-primary btn-block">Найти</button>
+
+                </form>
 
                 <li class="pt-3">
                     <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
@@ -114,12 +109,46 @@
             <div class="container ">
                 <div class="row">
 
-                    @for ($i = 0; $i < 9; $i++)
+{{--                    @for ($i = 0; $i < 9; $i++)--}}
+{{--                        <div class="col-md-4 pb-3">--}}
+{{--                            <div class="card">--}}
+{{--                                <img class="card-img-top" src="" alt="Card image cap">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="card-title">Джони</h5>--}}
+{{--                                    <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый--}}
+{{--                                        пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно--}}
+{{--                                        жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <div class="row justify-content-around text-center">--}}
+{{--                                        <div class="col"><a href="#" class="card-link btn btn-primary w-100">Подробнее</a></div>--}}
+{{--                                        <div class="col"><a href="#" class="card-link btn btn-primary w-100">Карты</a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endfor--}}
+
+                    @foreach ($pets as $pet)
+
+                        @php
+
+                            $photo = asset('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg' );
+                            if( ! is_file('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg')) {
+                                $photo = asset('img/nophoto.jpg');
+                            }
+
+
+                        @endphp
+
                         <div class="col-md-4 pb-3">
                             <div class="card">
-                                <img class="card-img-top" src="" alt="Card image cap">
+                                <img class="card-img-top"
+                                     src="{{ $photo }}"
+                                     style="max-height: 260px;"
+                                     alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title">Джони</h5>
+                                    <h5 class="card-title">{{ $pet->name }}</h5>
                                     <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
                                         пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно
                                         жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>
@@ -127,38 +156,18 @@
                                 <div class="card-body">
                                     <div class="row justify-content-around text-center">
                                         <div class="col"><a href="#" class="card-link btn btn-primary w-100">Подробнее</a></div>
-                                        <div class="col"><a href="#" class="card-link btn btn-primary w-100">Карты</a></div>
+                                        <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
 
                 </div>
 
                 <!-- Пагинация -->
                 <div class="row justify-content-center mt-5 display-5" style="font-size: 1.4rem">
-                    <div class="col-auto">
-                        <nav aria-label="Pagination">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link-mos" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link-mos" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link-mos" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link-mos" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link-mos" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    {{ $pets->links() }}
                 </div>
                 <!-- Конец пагинации -->
             </div>
