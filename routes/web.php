@@ -80,6 +80,11 @@ Route::prefix('directories')->group(function () {
     Route::post('colors', 'Directories\\ColorTypeController@store')->name('directories.color_types.store');
     Route::post('colors/{id}', 'Directories\\ColorTypeController@destroy')->name('directories.color_types.delete');
 
+    Route::get('wools', 'Directories\\WoolTypeController@index')->name('directories.wool_types');
+    Route::put('wools', 'Directories\\WoolTypeController@update')->name('directories.wool_types.update');
+    Route::post('wools', 'Directories\\WoolTypeController@store')->name('directories.wool_types.store');
+    Route::post('wools/{id}', 'Directories\\WoolTypeController@destroy')->name('directories.wool_types.delete');
+
 
 
 });

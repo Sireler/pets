@@ -14,5 +14,6 @@
         <a class="dropdown-item" href="{{ route('directories.euthanasia_types') }}">Причины эвтанации</a>
         <a class="dropdown-item" href="{{ route('directories.breed_types') }}">Породы</a>
         <a class="dropdown-item" href="{{ route('directories.color_types') }}">Окрасы</a>
+        <a class="dropdown-item" href="{{ route('directories.wool_types') }}">Типы шерсти</a>
     </div>
 </div>
