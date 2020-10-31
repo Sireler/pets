@@ -31,6 +31,9 @@
                             <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Аналитика</a>
                             <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Управление учетными записями</a>
                         </div>
+                        <div class="col-md-6 text-left">
+                            <a class="btn btn-secondary" href="{{ route('home.report') }}">Отчет по приютам</a>
+                        </div>
                     </div>
 
                     <div class="row my-4">

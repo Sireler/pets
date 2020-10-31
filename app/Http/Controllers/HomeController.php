@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Pet;
+use App\PetMovement;
 use App\PetShelter;
 use App\Role\UserRole;
 use App\Shelter;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
+use PHPStamp\Templator;
+use PHPStamp\Document\WordDocument;
 
 class HomeController extends Controller
 {
@@ -69,5 +74,138 @@ class HomeController extends Controller
         return view('home.pet_card', [
             'pet' => $pet
         ]);
+    }
+
+    public function generateReport()
+    {
+        $cachePath = public_path();
+        $templator = new Templator($cachePath);
+
+        // Enable debug mode to generate template with every render call.
+        // $templator->debug = true;
+
+        // Enable track mode to generate template with every original document change.
+        // $templator->trackDocument = true;
+
+        $documentPath = public_path('template.docx');
+        $document = new WordDocument($documentPath);
+
+        $shelters = Shelter::all();
+
+        $startCountAll = 0;
+        $startCountDogs = 0;
+        $startCountCats = 0;
+
+        $leftCountTotal = 0;
+        $leftCountDogsTotal = 0;
+        $leftCountCatsTotal = 0;
+
+        $currentCountTotal = 0;
+        $currentCountDogsTotal = 0;
+        $currentCountCatsTotal = 0;
+
+        foreach ($shelters as $shelter) {
+            $petShelter = PetShelter::where('shelter_id', $shelter->id)->with('pet')->count();
+            $shelter['allCount'] = $petShelter;
+
+            $petShelter = PetShelter::where('shelter_id', $shelter->id)->whereHas('pet', function ($query) {
+                return $query->where('type', 'кошка');
+            })->count();
+            $shelter['catCount'] = $petShelter;
+
+            $shelter['dogCount'] = $shelter['allCount'] - $petShelter;
+
+            // LEFT
+            $left = PetMovement::whereNotNull('left_date')->whereHas('pet.shelter', function ($query) use ($shelter) {
+                return $query->where('shelter_id', $shelter->id);
+            })->count();
+            $shelter['leftAllCount'] = $left;
+
+            $left = PetMovement::whereNotNull('left_date')->whereHas('pet.shelter', function ($query) use ($shelter) {
+                return $query->where('shelter_id', $shelter->id);
+            })->whereHas('pet', function ($query) {
+                return $query->where('type', 'собака');
+            })->count();
+            $shelter['leftDogCount'] = $left;
+            $shelter['leftCatCount'] = $shelter['leftAllCount'] - $left;
+
+            $shelter['currentAllCount'] = $shelter['allCount'] - $shelter['leftAllCount'];
+            $shelter['currentDogCount'] = $shelter['dogCount'] - $shelter['leftDogCount'];
+            $shelter['currentCatCount'] = $shelter['catCount'] - $shelter['leftCatCount'];
+
+            $startCountAll += $shelter['allCount'];
+            $startCountDogs += $shelter['dogCount'];
+            $startCountCats += $shelter['catCount'];
+
+            $leftCountTotal += $shelter['leftAllCount'];
+            $leftCountDogsTotal += $shelter['leftDogCount'];
+            $leftCountCatsTotal += $shelter['leftCatCount'];
+
+            $currentCountTotal += $shelter['currentAllCount'];
+            $currentCountDogsTotal += $shelter['currentDogCount'];
+            $currentCountCatsTotal += $shelter['currentCatCount'];
+        }
+
+        $firstDate = '2008-01-01';
+        $firstDateYear = explode('-', $firstDate)[0];
+        $firstDateMonth = explode('-', $firstDate)[1];
+        $firstDateDay = explode('-', $firstDate)[2];
+
+
+        $currentDateYear = Carbon::now()->year;
+        $currentDateMonth = Carbon::now()->month;
+        $currentDateDay = Carbon::now()->day;
+
+
+//        dd($shelters->toArray());
+
+//        dd($shelters->toArray());
+        //$petShelter = PetShelter::where('shelter_id', $shelter->id)->with('pet')->get();
+
+//        dd($dogCount);
+
+        $values = array(
+            'library' => 'PHPStamp 0.1',
+            'simpleValue' => 'I am simple value',
+            'nested' => array(
+                'firstValue' => 'First child value',
+                'secondValue' => 'Second child value'
+            ),
+            'header' => 'test of a table row',
+            'students' => $shelters->toArray(),
+            'startCountAll' => $startCountAll,
+            'startCountDogs' => $startCountDogs,
+            'startCountCats' => $startCountCats,
+            'leftCountTotal' => $leftCountTotal,
+            'leftCountDogsTotal' => $leftCountDogsTotal,
+            'leftCountCatsTotal' => $leftCountCatsTotal,
+            'currentCountTotal' => $currentCountTotal,
+            'currentCountDogsTotal' => $currentCountDogsTotal,
+            'currentCountCatsTotal' => $currentCountCatsTotal,
+            'firstDate' => $firstDate,
+            'cdy' => $currentDateYear,
+            'cdm' => $currentDateMonth,
+            'cdd' => $currentDateDay,
+            'fdy' => $firstDateYear,
+            'fdm' => $firstDateMonth,
+            'fdd' => $firstDateDay
+        );
+        $result = $templator->render($document, $values);
+
+        // Now you can get template result.
+        // 1. HTTP Download
+        $result->download();
+
+        return redirect()->back();
+        // Or
+        // 2. Save to file
+        // $saved = $result->save(__DIR__ . '/static', 'Test_Result1.docx');
+        // if ($saved === true) {
+        //     echo 'Saved!';
+        // }
+
+        // Or
+        // 3. Buffer output
+        // echo $result->output();
     }
 }
