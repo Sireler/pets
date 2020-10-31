@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pet;
 use App\PetShelter;
 use App\Role\UserRole;
 use App\Shelter;
@@ -61,8 +62,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function shelterPetCard()
+    public function shelterPetCard(Request $request, $shelterId, $petId)
     {
+        $pet = Pet::where('id', $petId)->first();
 
+        return view('home.pet_card', [
+            'pet' => $pet
+        ]);
     }
 }
