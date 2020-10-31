@@ -109,6 +109,5 @@ Route::prefix('catalog')->group(function () {
 
 
 
-
 Route::get('/test', 'TestController@test')
     ->name('test');

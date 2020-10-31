@@ -11,6 +11,17 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <div class="alert alert-primary">
+                            <p>Данные учетных записей:</p>
+                            <hr>
+                            <p>Администратор:</p>
+                            <p>
+                                E-mail: mail@mail.ru <br>
+                                Пароль: Qwerty123
+                            </p>
+                            <hr>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

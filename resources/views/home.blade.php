@@ -5,7 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header bg-secondary text-white">
+                    <p>
+                        Здравствуйте, {{ Auth::user()->name }}!
+                    </p>
+                    <p>
+                        Ваша роль в системе: Администратор
+                    </p>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,14 +21,38 @@
                         </div>
                     @endif
 
-                    <div>
-                        <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Справочники</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Справочники системы</a>
+                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Реестр животных</a>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Аналитика</a>
+                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Управление учетными записями</a>
+                        </div>
                     </div>
 
+                    <div class="row my-4">
+                        <div class="col-md-4">
+                            <div class="alert alert-info">
+                                <h4 class="font-weight-bold">Приютов в системе: </h4>
+                                <div class="text-center display-3">
+                                    13
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    @foreach($user->roles as $role)
-                        {{ $role }} <br>
-                    @endforeach
+                    <div class="row my-4">
+                        <div class="col-md-4">
+                            <div class="alert alert-info">
+                                <h4 class="font-weight-bold">Животных в приютах: </h4>
+                                <div class="text-center display-2">
+                                    252
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
