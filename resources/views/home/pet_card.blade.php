@@ -3,6 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <a class="btn btn-primary" href="{{ route('home.shelter', ['id' => $pet->shelter->shelter_id]) }}">В приют</a>
+            </div>
+        </div>
+        <div class="row">
+
             <div class="col m-auto">
                 <form>
 
@@ -176,6 +182,12 @@
                                 <input disabled required id="idPetNumber" class="form-control"
                                        type="text" name="idPetNumber"
                                        maxlength="16" value="{{ @$pet->info->identification_mark }}">
+                            </div>
+                            <div class="col-auto">
+                                <label for="petSocialized">Социализировано</label>
+                                <input disabled id="petSocialized" class="form-control"
+                                       type="checkbox" name="petSocialized"
+                                       @if(@$pet->info->socialized == 1) checked @endif>
                             </div>
                         </div>
                     </div>
