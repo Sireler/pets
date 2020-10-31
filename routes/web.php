@@ -44,6 +44,15 @@ Route::prefix('directories')->group(function () {
     Route::put('ear_types', 'Directories\\EarTypeController@update')->name('directories.ear_types.update');
     Route::post('ear_types', 'Directories\\EarTypeController@store')->name('directories.ear_types.store');
     Route::post('ear_types/{id}', 'Directories\\EarTypeController@destroy')->name('directories.ear_types.delete');
+
+    Route::get('tail_types', 'Directories\\TailTypeController@index')->name('directories.tail_types');
+    Route::put('tail_types', 'Directories\\TailTypeController@update')->name('directories.tail_types.update');
+    Route::post('tail_types', 'Directories\\TailTypeController@store')->name('directories.tail_types.store');
+    Route::post('tail_types/{id}', 'Directories\\TailTypeController@destroy')->name('directories.tail_types.delete');
+
+
+
+
 });
 
 
