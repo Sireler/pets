@@ -10,5 +10,6 @@
         <a class="dropdown-item" href="{{ route('directories.tail_types') }}">Типы хвостов</a>
         <a class="dropdown-item" href="{{ route('directories.death_types') }}">Причины смерти</a>
         <a class="dropdown-item" href="{{ route('directories.left_types') }}">Причины выбытия из приюта</a>
+        <a class="dropdown-item" href="{{ route('directories.euthanasia_types') }}">Причины эвтанации</a>
     </div>
 </div>
