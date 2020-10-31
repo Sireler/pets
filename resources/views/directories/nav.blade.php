@@ -8,5 +8,6 @@
         <a class="dropdown-item" href="{{ route('directories.gender_types') }}">Виды пола</a>
         <a class="dropdown-item" href="{{ route('directories.ear_types') }}">Типы ушей</a>
         <a class="dropdown-item" href="{{ route('directories.tail_types') }}">Типы хвостов</a>
+        <a class="dropdown-item" href="{{ route('directories.death_types') }}">Причины смерти</a>
     </div>
 </div>

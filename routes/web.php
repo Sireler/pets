@@ -50,7 +50,10 @@ Route::prefix('directories')->group(function () {
     Route::post('tail_types', 'Directories\\TailTypeController@store')->name('directories.tail_types.store');
     Route::post('tail_types/{id}', 'Directories\\TailTypeController@destroy')->name('directories.tail_types.delete');
 
-
+    Route::get('death_types', 'Directories\\DeathTypeController@index')->name('directories.death_types');
+    Route::put('death_types', 'Directories\\DeathTypeController@update')->name('directories.death_types.update');
+    Route::post('death_types', 'Directories\\DeathTypeController@store')->name('directories.death_types.store');
+    Route::post('death_types/{id}', 'Directories\\DeathTypeController@destroy')->name('directories.death_types.delete');
 
 
 });
