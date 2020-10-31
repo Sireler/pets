@@ -416,7 +416,24 @@
                             </div>
                         </div>
                         <div class="row">
-
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Приют</th>
+                                        <th scope="col">Владелец приюта</th>
+                                        <th scope="col">Ответственный за животное</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ @$pet->shelter->shelter_name }}</td>
+                                        <td>{{ @$pet->shelter->shelter_owner_name }}</td>
+                                        <td>{{ @$pet->shelter->animal_watcher_name }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
