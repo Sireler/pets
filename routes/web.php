@@ -55,6 +55,12 @@ Route::prefix('directories')->group(function () {
     Route::post('death_types', 'Directories\\DeathTypeController@store')->name('directories.death_types.store');
     Route::post('death_types/{id}', 'Directories\\DeathTypeController@destroy')->name('directories.death_types.delete');
 
+    Route::get('left_types', 'Directories\\LeftTypeController@index')->name('directories.left_types');
+    Route::put('left_types', 'Directories\\LeftTypeController@update')->name('directories.left_types.update');
+    Route::post('left_types', 'Directories\\LeftTypeController@store')->name('directories.left_types.store');
+    Route::post('left_types/{id}', 'Directories\\LeftTypeController@destroy')->name('directories.left_types.delete');
+
+
 
 });
 
