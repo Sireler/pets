@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col m-auto">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form>
 
                     <!-- Основное -->
                     <div class="container">
@@ -249,184 +249,206 @@
                     </div>
 
 
-                    <!-- Сведения о новых владельцах -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 border-bottom my-4">
-                                <h4>Сведения о новых владельцах</h4>
+                    <div id="accordion" class="mt-4">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <h4>Сведения о новых владельцах</h4>
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <!-- Сведения о новых владельцах -->
+                                <div class="container my-4">
+                                    <!-- Выбор лица -->
+
+                                    <div class="row" id="urFaceBl">
+                                        <div class="col">
+                                            <label for="urFace">Юридическое лицо</label>
+                                            <input disabled required id="urFace" class=" form-control"
+                                                   type="text" name="urFace"
+                                                   placeholder="" value="{{ @$pet->owners->entity_name }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="urFaceBl">
+                                        <div class="col">
+                                            <label for="urFace">Опекун</label>
+                                            <input disabled required id="urFace" class=" form-control"
+                                                   type="text" name="urFace"
+                                                   placeholder="" value="{{ @$pet->owners->guardian_name }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="matFace">Физическое лицо</label>
+                                            <input disabled required id="matFace" class="form-control"
+                                                   type="text" name="matFace"
+                                                   placeholder="Ф.И.О." value="{{ @$pet->owners->individual_name }}">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <h4>Движение животного</h4>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <!-- Движение животного -->
+                                <div class="container my-4">
 
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <label for="arriving">Дата поступления в приют</label>
+                                            <input disabled required id="arriving" class=" form-control"
+                                                   name="date_of_arrived" placeholder="" value="{{ @$pet->movements->arrived_date }}">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="actAr">Акт</label>
+                                            <input disabled required id="actAr" class="form-control"
+                                                   type="text" name="actAr" maxlength="4"
+                                                   placeholder="№" value="{{ @$pet->movements->act_number }}">
+                                        </div>
+                                    </div>
 
-                        <!-- Выбор лица -->
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <label for="adopting">Дата выбытия из приюта</label>
+                                            <input disabled required id="adopting" class=" form-control"
+                                                   name="date_of_adopted" placeholder="" value="{{ @$pet->movements->left_date }}">
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="actAd">Акт</label>
+                                            <input disabled required id="actAd" class="form-control"
+                                                   type="text" name="actAd" maxlength="4"
+                                                   placeholder="№" value="{{ @$pet->movements->contract_number }}">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="reason">Причина выбытия из приюта</label>
+                                            <input disabled required id="reason" class="form-control"
+                                                   type="text" name="reason" maxlength=""
+                                                   placeholder="" value="{{ @$pet->movements->left_reason }}">
+                                        </div>
+                                    </div>
 
-                        <div class="row" id="urFaceBl">
-                            <div class="col">
-                                <label for="urFace">Юридическое лицо</label>
-                                <input disabled required id="urFace" class=" form-control"
-                                       type="text" name="urFace"
-                                       placeholder="" value="{{ @$pet->owners->entity_name }}">
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row" id="urFaceBl">
-                            <div class="col">
-                                <label for="urFace">Опекун</label>
-                                <input disabled required id="urFace" class=" form-control"
-                                       type="text" name="urFace"
-                                       placeholder="" value="{{ @$pet->owners->guardian_name }}">
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <h4>Сведения об обработке от экто- и эндопаразитов</h4>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <!-- Сведения об обработке от экто- и эндопаразитов -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Дата</th>
+                                                    <th scope="col">Наименование препарата</th>
+                                                    <th scope="col">Доза</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($pet->treatments as $t)
+                                                    <tr>
+                                                        <td>{{ @$t->date }}</td>
+                                                        <td>{{ @$t->drug_name }}</td>
+                                                        <td>{{ @$t->dose }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <label for="matFace">Физическое лицо</label>
-                                <input disabled required id="matFace" class="form-control"
-                                       type="text" name="matFace"
-                                       placeholder="Ф.И.О." value="{{ @$pet->owners->individual_name }}">
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <h4>Медицинская карточка животного</h4>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                <!-- Сведения о вакцинации -->
+                                <p class="m-3">Вакцинация:</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Дата</th>
+                                                    <th scope="col">Наименование препарата</th>
+                                                    <th scope="col">Доза</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($pet->vaccinations as $v)
+                                                    <tr>
+                                                        <td>{{ @$v->date }}</td>
+                                                        <td>{{ @$v->vaccine_type }}</td>
+                                                        <td>{{ @$v->serial }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h5 class="mb-0">
+                                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        <h4>Сведения о состоянии здоровья</h4>
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Дата</th>
+                                                    <th scope="col">Статус</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>{{ @$pet->health->date }}</td>
+                                                    <td>{{ @$pet->health->status }}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- Движение животного -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 border-bottom my-4">
-                                <h4>Движение животного</h4>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-2">
-                                <label for="arriving">Дата поступления в приют</label>
-                                <input disabled required id="arriving" class=" form-control"
-                                       name="date_of_arrived" placeholder="" value="{{ @$pet->movements->arrived_date }}">
-                            </div>
-                            <div class="col-auto">
-                                <label for="actAr">Акт</label>
-                                <input disabled required id="actAr" class="form-control"
-                                       type="text" name="actAr" maxlength="4"
-                                       placeholder="№" value="{{ @$pet->movements->act_number }}">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-2">
-                                <label for="adopting">Дата выбытия из приюта</label>
-                                <input disabled required id="adopting" class=" form-control"
-                                       name="date_of_adopted" placeholder="" value="{{ @$pet->movements->left_date }}">
-                            </div>
-                            <div class="col-auto">
-                                <label for="actAd">Акт</label>
-                                <input disabled required id="actAd" class="form-control"
-                                       type="text" name="actAd" maxlength="4"
-                                       placeholder="№" value="{{ @$pet->movements->contract_number }}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="reason">Причина выбытия из приюта</label>
-                                <input disabled required id="reason" class="form-control"
-                                       type="text" name="reason" maxlength=""
-                                       placeholder="" value="{{ @$pet->movements->left_reason }}">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Сведения об обработке от экто- и эндопаразитов -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 border-bottom my-4">
-                                <h4>Сведения об обработке от экто- и эндопаразитов</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Дата</th>
-                                        <th scope="col">Наименование препарата</th>
-                                        <th scope="col">Доза</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($pet->treatments as $t)
-                                            <tr>
-                                                <td>{{ @$t->date }}</td>
-                                                <td>{{ @$t->drug_name }}</td>
-                                                <td>{{ @$t->dose }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Сведения о вакцинации -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 border-bottom my-4">
-                                <h4>Медицинская карточка животного</h4>
-                                <p>Сведения о вакцинации:</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Дата</th>
-                                        <th scope="col">Наименование препарата</th>
-                                        <th scope="col">Доза</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($pet->vaccinations as $v)
-                                        <tr>
-                                            <td>{{ @$v->date }}</td>
-                                            <td>{{ @$v->vaccine_type }}</td>
-                                            <td>{{ @$v->serial }}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Сведения о состоянии здорвья -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 border-bottom my-4">
-                                <h4>Сведения о состоянии здоровья</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Дата</th>
-                                        <th scope="col">Статус</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>{{ @$pet->health->date }}</td>
-                                        <td>{{ @$pet->health->status }}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <!-- Ответственниы за животное -->
                     <div class="container">
