@@ -39,6 +39,11 @@ Route::prefix('directories')->group(function () {
     Route::put('gender_types', 'Directories\\GenderTypeController@update')->name('directories.gender_types.update');
     Route::post('gender_types', 'Directories\\GenderTypeController@store')->name('directories.gender_types.store');
     Route::post('gender_types/{id}', 'Directories\\GenderTypeController@destroy')->name('directories.gender_types.delete');
+
+    Route::get('ear_types', 'Directories\\EarTypeController@index')->name('directories.ear_types');
+    Route::put('ear_types', 'Directories\\EarTypeController@update')->name('directories.ear_types.update');
+    Route::post('ear_types', 'Directories\\EarTypeController@store')->name('directories.ear_types.store');
+    Route::post('ear_types/{id}', 'Directories\\EarTypeController@destroy')->name('directories.ear_types.delete');
 });
 
 
