@@ -115,7 +115,7 @@ Route::get('/home/shelter/{id}/pets', 'HomeController@shelter')->name('home.shel
 Route::get('/home/shelter/{id}/pets/{pet}', 'HomeController@shelterPetCard')->name('home.shelter.petCard');
 Route::get('/home/report', 'HomeController@generateReport')->name('home.report');
 Route::get('/home/petReport/{id}', 'HomeController@generatePetReport')->name('home.pet_report');
-
+Route::post('/home/pet/{id}/update', 'HomeController@updatePet')->name('home.pet_update');
 
 Route::get('/home/pets', 'HomeController@petsRegister')->name('home.pets');
 

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\BreedType;
+use App\GenderType;
 use App\Pet;
 use App\PetMovement;
 use App\PetShelter;
+use App\PetType;
 use App\Role\UserRole;
 use App\Shelter;
 use App\User;
@@ -95,10 +98,30 @@ class HomeController extends Controller
     public function shelterPetCard(Request $request, $shelterId, $petId)
     {
         $pet = Pet::where('id', $petId)->first();
+        $petTypes = PetType::all();
+        $petBreeds = BreedType::all();
+        $petGenders = GenderType::all();
 
         return view('home.pet_card', [
+            'petTypes' => $petTypes,
+            'petBreeds' => $petBreeds,
+            'petGenders' => $petGenders,
             'pet' => $pet
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     */
+    public function updatePet(Request $request, $id)
+    {
+        $data = $request->except('_token');
+
+        $pet = Pet::where('id', $id)->first();
+        $pet->update($data);
+
+        return redirect()->back();
     }
 
     /**

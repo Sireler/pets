@@ -8,10 +8,9 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col m-auto">
-                <form>
-
+                <form method="POST" action="{{ route('home.pet_update', $pet->id) }}">
+                    @csrf
                     <!-- Основное -->
                     <div class="container">
                         <div class="row my-5">
@@ -47,14 +46,21 @@
                         <div class="row">
                             <div class="col">
                                 <label for="name">Кличка</label>
-                                <input disabled required id="name" class=" form-control"
+                                <input required id="name" class=" form-control"
                                        type="text" name="name"  value="{{ $pet->name }}">
                             </div>
 
                             <div class="col">
                                 <label for="type">Тип</label>
-                                <select disabled id="type" class=" form-control" name="type">
-                                    <option value="">{{ $pet->type }}</option>
+                                <select required id="type" class=" form-control" name="type">
+                                    @foreach($petTypes as $petType)
+
+                                        <option
+                                            @if(Str::lower($petType->name) == Str::lower(trim($pet->type))) selected @endif>
+                                            {{ $petType->name }}
+                                        </option>
+
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -63,8 +69,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="breed">Порода</label>
-                                <select disabled id="breed" class=" form-control" name="breed_name">
-                                    <option value="">{{ $pet->breed_name }}</option>
+                                <select id="breed" class=" form-control" name="breed_name">
+                                    @foreach($petBreeds as $petBreed)
+
+                                        <option
+                                            @if(Str::lower($petBreed->name) == trim($pet->breed_name)) selected @endif>
+                                            {{ $petBreed->name }}
+                                        </option>
+
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -81,7 +94,7 @@
                         <div class="row mt-2">
                             <div class="col">
                                 <label for="birthDate">Дата рождения</label>
-                                <input disabled required id="birthDate" class=" form-control" name="" placeholder="" value="{{ $pet->date_of_birth }}">
+                                <input required id="birthDate" class=" form-control" name="date_of_birth" placeholder="" value="{{ $pet->date_of_birth }}">
                             </div>
                             <div class="col">
                                 <div class="row">
@@ -89,17 +102,22 @@
                                 </div>
                                 <label>Пол</label>
                                 <div class="form-check form-check-inline">
-                                    <input disabled class="form-check-input" @if($pet->sex == 'мужской') checked @endif type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" @if($pet->sex == 'мужской') checked @endif type="radio" name="sex" id="inlineRadio1" value="мужской">
                                     <label class="form-check-label" for="inlineRadio1">М</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input disabled class="form-check-input" @if($pet->sex == 'женский') checked @endif type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" @if($pet->sex == 'женский') checked @endif type="radio" name="sex" id="inlineRadio2" value="женский">
                                     <label class="form-check-label" for="inlineRadio2">Ж</label>
                                 </div>
                             </div>
                         </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="btn btn-success">Сохранить</button>
+                            </div>
+                        </div>
                     </div>
-
+                </form>
                     <!-- Внешний вид -->
                     <div class="container">
                         <div class="row my-4">
@@ -493,7 +511,7 @@
 
                     <br>
 
-                </form>
+
             </div>
         </div>
 @endsection
