@@ -112,6 +112,12 @@ Route::get('/home/shelter/{id}/pets/{pet}', 'HomeController@shelterPetCard')->na
 Route::get('/home/report', 'HomeController@generateReport')->name('home.report');
 
 
+Route::prefix('api')->group(function () {
+
+    Route::get('/pets', 'API\\APIController@pets');
+    Route::get('/pet/{id}', 'API\\APIController@pet');
+
+});
 
 
 
