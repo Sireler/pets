@@ -169,7 +169,7 @@
 
                 <!-- Пагинация -->
                 <div class="row justify-content-center mt-5 display-5" style="font-size: 1.4rem">
-                    {{ $pets->links() }}
+                    {{ $pets->appends(request()->input())->links() }}
                 </div>
                 <!-- Конец пагинации -->
             </div>
