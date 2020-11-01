@@ -71,7 +71,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Приют: {{ $pet->shelter->shelter->name }}
+                                                Приют: {{ @$pet->shelter->shelter->name }}
                                             </div>
                                         </div>
                                     </li>
@@ -79,7 +79,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Телефон: {{ $pet->shelter->shelter->phone }}
+                                                Телефон: {{ @$pet->shelter->shelter->phone }}
                                             </div>
                                         </div>
                                     </li>
@@ -87,7 +87,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Адрес: {{ $pet->shelter->shelter->address }}
+                                                Адрес: {{ @$pet->shelter->shelter->address }}
                                             </div>
                                         </div>
                                     </li>

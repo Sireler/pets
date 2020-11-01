@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="row justify-content-around text-center">
-                                                    <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                                    <div class="col"><a href="{{ route('catalog.showPet', $pet->id) }}" class="card-link btn btn-primary w-100">Подробнее</a></div>
                                                     <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="row justify-content-around text-center">
-                                                    <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                                    <div class="col"><a href="{{ route('catalog.showPet', $pet->id) }}" class="card-link btn btn-primary w-100">Подробнее</a></div>
                                                     <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-center my-5">
-                        <div class="col-auto "><a href="#" class="btn btn-primary p-2 px-4">Посмотреть всех</a></div>
+                        <div class="col-auto "><a href="{{ route('catalog.findByPetType', ['pet_type' => 1]) }}" class="btn btn-primary p-2 px-4">Посмотреть всех</a></div>
                     </div>
                     <!-- Конец блока с карточками -->
 
