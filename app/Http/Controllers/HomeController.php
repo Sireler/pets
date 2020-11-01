@@ -112,12 +112,6 @@ class HomeController extends Controller
         $cachePath = public_path();
         $templator = new Templator($cachePath);
 
-        // Enable debug mode to generate template with every render call.
-        // $templator->debug = true;
-
-        // Enable track mode to generate template with every original document change.
-        // $templator->trackDocument = true;
-
         $documentPath = public_path('template.docx');
         $document = new WordDocument($documentPath);
 
@@ -188,13 +182,6 @@ class HomeController extends Controller
         $currentDateDay = Carbon::now()->day;
 
 
-//        dd($shelters->toArray());
-
-//        dd($shelters->toArray());
-        //$petShelter = PetShelter::where('shelter_id', $shelter->id)->with('pet')->get();
-
-//        dd($dogCount);
-
         $values = array(
             'library' => 'PHPStamp 0.1',
             'simpleValue' => 'I am simple value',
@@ -223,20 +210,8 @@ class HomeController extends Controller
         );
         $result = $templator->render($document, $values);
 
-        // Now you can get template result.
-        // 1. HTTP Download
         $result->download();
 
         return redirect()->back();
-        // Or
-        // 2. Save to file
-        // $saved = $result->save(__DIR__ . '/static', 'Test_Result1.docx');
-        // if ($saved === true) {
-        //     echo 'Saved!';
-        // }
-
-        // Or
-        // 3. Buffer output
-        // echo $result->output();
     }
 }
