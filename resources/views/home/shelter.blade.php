@@ -14,6 +14,8 @@
                             </div>
                         @endif
 
+                        <a class="btn btn-primary my-2" href="{{ route('home.pet_report', $shelter->id) }}">Вывести на печать</a>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 class="text-primary font-weight-bold">{{ $shelter->name }}</h2>

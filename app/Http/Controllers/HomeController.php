@@ -114,6 +114,67 @@ class HomeController extends Controller
         ]);
     }
 
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \PHPStamp\Exception\InvalidArgumentException
+     */
+    public function generatePetReport(Request $request, $id)
+    {
+        $cachePath = public_path();
+        $templator = new Templator($cachePath);
+
+        $documentPath = public_path('template_4.docx');
+        $document = new WordDocument($documentPath);
+
+        $shelter = Shelter::where('id', $id)->first();
+
+        $petShelter = PetShelter::where('shelter_id', $shelter->id)->with('pet')->get();
+
+        $data = [];
+
+        $number = 1;
+        foreach ($petShelter as $p) {
+            $data[] = [
+                'number' => $number,
+                'card_number' => $p->pet->card_number,
+                'name' => $p->pet->name,
+                'type' => $p->pet->type,
+                'sex' => $p->pet->sex,
+                'mark' => @$p->pet->info->identification_mark,
+                'arrived_at' => @$p->pet->movements->arrived_date
+            ];
+            $number++;
+        }
+
+        $currentDateYear = Carbon::now()->year;
+        $currentDateMonth = Carbon::now()->month;
+        $currentDateDay = Carbon::now()->day;
+
+        $values = array(
+            'library' => 'PHPStamp 0.1',
+            'simpleValue' => 'I am simple value',
+            'nested' => array(
+                'firstValue' => 'First child value',
+                'secondValue' => 'Second child value'
+            ),
+            'header' => 'test of a table row',
+            'students' => $data,
+            'address' => $shelter->address,
+            'org' => $petShelter[0]->shelter_name,
+            'cdy' => $currentDateYear,
+            'cdm' => $currentDateMonth,
+            'cdd' => $currentDateDay,
+        );
+        $result = $templator->render($document, $values);
+
+        $result->download();
+
+        return redirect()->back();
+    }
+
+
+
     /**
      * Генерация word отчета
      *
