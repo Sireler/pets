@@ -50,57 +50,57 @@
 
                 </form>
 
-                <li class="pt-3">
-                    <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">
-                        <span class="row">
-                            <span class="col justify-content-center">
-                               Продвинутый поиск <i class="fas fa-angle-down"></i>
-                            </span>
-                        </span>
-                    </a>
-                    <div class="collapse" id="collapseSearch">
-                        <div class="card card-body border-right-0 border-left-0 border-top-0" style="border-radius: 0">
-                            <ul class="list-unstyled">
+{{--                <li class="pt-3">--}}
+{{--                    <a class="btn-link-mos form-control text-center"  data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch">--}}
+{{--                        <span class="row">--}}
+{{--                            <span class="col justify-content-center">--}}
+{{--                               Продвинутый поиск <i class="fas fa-angle-down"></i>--}}
+{{--                            </span>--}}
+{{--                        </span>--}}
+{{--                    </a>--}}
+{{--                    <div class="collapse" id="collapseSearch">--}}
+{{--                        <div class="card card-body border-right-0 border-left-0 border-top-0" style="border-radius: 0">--}}
+{{--                            <ul class="list-unstyled">--}}
 
-                                <li class="border-bottom">
-                                    <label for="nameSearch">Найти по кличке:</label>
-                                    <input id="nameSearch" class="form-control mb-3" type="text" placeholder="Введите кличку животного">
-                                </li>
+{{--                                <li class="border-bottom">--}}
+{{--                                    <label for="nameSearch">Найти по кличке:</label>--}}
+{{--                                    <input id="nameSearch" class="form-control mb-3" type="text" placeholder="Введите кличку животного">--}}
+{{--                                </li>--}}
 
-                                <li class="border-bottom">
-                                    <label for="idSearch">Найти по ID метке:</label>
-                                    <input id="idSearch" class="form-control mb-3" type="text" placeholder="Введите ID номер животного">
-                                </li>
+{{--                                <li class="border-bottom">--}}
+{{--                                    <label for="idSearch">Найти по ID метке:</label>--}}
+{{--                                    <input id="idSearch" class="form-control mb-3" type="text" placeholder="Введите ID номер животного">--}}
+{{--                                </li>--}}
 
-                                <li class="border-bottom">
-                                    <label for="aoSearch">Найти по административному округу:</label>
-                                    <input id="aoSearch" class="form-control mb-3" type="text" placeholder="Введите название АО">
-                                </li>
+{{--                                <li class="border-bottom">--}}
+{{--                                    <label for="aoSearch">Найти по административному округу:</label>--}}
+{{--                                    <input id="aoSearch" class="form-control mb-3" type="text" placeholder="Введите название АО">--}}
+{{--                                </li>--}}
 
-                                <li class="border-bottom">
-                                    <label for="shelterSearch">Найти по приюту:</label>
-                                    <input id="shelterSearch" class="form-control mb-3" type="text" placeholder="Введите название приюта">
-                                </li>
+{{--                                <li class="border-bottom">--}}
+{{--                                    <label for="shelterSearch">Найти по приюту:</label>--}}
+{{--                                    <input id="shelterSearch" class="form-control mb-3" type="text" placeholder="Введите название приюта">--}}
+{{--                                </li>--}}
 
-                                <li class="border-bottom">
-                                    <label for="adoptingDate">Найти по периоду регистрации карточки:</label>
-                                    <br>
-                                    C<input required id="adoptingDate" class=" form-control" type="date" placeholder="" value="">
-                                    По <input required id="adoptingDate" class=" form-control" type="date" placeholder="" value="">
-                                </li>
+{{--                                <li class="border-bottom">--}}
+{{--                                    <label for="adoptingDate">Найти по периоду регистрации карточки:</label>--}}
+{{--                                    <br>--}}
+{{--                                    C<input required id="adoptingDate" class=" form-control" type="date" placeholder="" value="">--}}
+{{--                                    По <input required id="adoptingDate" class=" form-control" type="date" placeholder="" value="">--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <label for="searchEx">Причина выбытия</label>
-                                    <select class="form-control" id="searchEx">
-                                        <option>Все</option>
-                                        <option>Смерть</option>
-                                        <option>Передан в собственность(под опеку)</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+{{--                                <li>--}}
+{{--                                    <label for="searchEx">Причина выбытия</label>--}}
+{{--                                    <select class="form-control" id="searchEx">--}}
+{{--                                        <option>Все</option>--}}
+{{--                                        <option>Смерть</option>--}}
+{{--                                        <option>Передан в собственность(под опеку)</option>--}}
+{{--                                    </select>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
 
             </ul>
         </div>
