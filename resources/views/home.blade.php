@@ -10,7 +10,12 @@
                         Здравствуйте, {{ Auth::user()->name }}!
                     </p>
                     <p>
-                        Ваша роль в системе: Администратор
+                        Ваша роль в системе:
+                        @if (request()->user()->hasRole('ROLE_ADMIN'))
+                            Администратор
+                        @elseif(request()->user()->hasRole('ROLE_YAO'))
+                            Сотрудник Префектуры ЮАО
+                        @endif
                     </p>
                 </div>
 
@@ -28,11 +33,14 @@
                             <a href="{{ route('home.shelters') }}" class="btn btn-primary my-3">Список приютов</a>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Аналитика</a>
-                            <a class="btn btn-primary" href="{{ route('directories.organizations') }}">Управление учетными записями</a>
+                            @if (request()->user()->hasRole('ROLE_ADMIN'))
+                                <a class="btn btn-primary" href="#">Управление учетными записями</a>
+                            @endif
                         </div>
                         <div class="col-md-6 text-left">
-                            <a class="btn btn-secondary" href="{{ route('home.report') }}">Отчет по приютам</a>
+                            @if (request()->user()->hasRole('ROLE_ADMIN'))
+                                <a class="btn btn-secondary" href="{{ route('home.report') }}">Отчет по приютам</a>
+                            @endif
                         </div>
                     </div>
 

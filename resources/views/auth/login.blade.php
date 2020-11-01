@@ -19,6 +19,11 @@
                                 E-mail: mail@mail.ru <br>
                                 Пароль: Qwerty123
                             </p>
+                            <p>Сотрудник ЮАО:</p>
+                            <p>
+                                E-mail: user@mail.ru <br>
+                                Пароль: Qwerty123
+                            </p>
                             <hr>
                         </div>
 

@@ -18,6 +18,7 @@ use App\WoolType;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use PHPStamp\Templator;
 use PHPStamp\Document\WordDocument;
 
@@ -47,8 +48,6 @@ class HomeController extends Controller
         $sheltersCount = Shelter::count();
         $petsCount = Pet::count();
 
-        //$user->addRole(UserRole::ROLE_SUPPORT);
-        //$user->save();
 
         return view('home', [
             'sheltersCount' => $sheltersCount,
@@ -65,7 +64,15 @@ class HomeController extends Controller
      */
     public function shelters(Request $request)
     {
-        $shelters = Shelter::all();
+        $shelters = [];
+
+        if (Auth::user()->hasRole('ROLE_ADMIN')) {
+            $shelters = Shelter::all();
+        } elseif (Auth::user()->hasRole('ROLE_YAO')) {
+            $shelters = Shelter::where('organization_id', 4)->get();
+        }
+
+
 
         return view('home.shelters', [
             'shelters' => $shelters
