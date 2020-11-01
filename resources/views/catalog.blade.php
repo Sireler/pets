@@ -151,13 +151,11 @@
                                      alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $pet->name }}</h5>
-                                    <p class="card-text">Харизматичный, активный, очень ласковый и невероятно доверчивый
-                                        пес Джони. Кастрирован, привит и здоров! Рост 50 см, вес 32 кг, предположительно
-                                        жил при дворе в деревне. Но в машине при этом ведет себя отлично и спокойно переносит дорогу</p>
+                                    <p class="card-text">Эта {{ $pet->type }} очень ждет Вас! Очень ласковое создание</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="row justify-content-around text-center">
-                                        <div class="col"><a href="/test" class="card-link btn btn-primary w-100">Подробнее</a></div>
+                                        <div class="col"><a href="{{ route('catalog.showPet', $pet->id) }}" class="card-link btn btn-primary w-100">Подробнее</a></div>
                                         <div class="col"><a href="#" class="card-link btn btn-primary w-100">На карту</a></div>
                                     </div>
                                 </div>

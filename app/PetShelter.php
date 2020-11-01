@@ -10,4 +10,9 @@ class PetShelter extends Model
     {
         return $this->hasOne(Pet::class, 'id', 'pet_id');
     }
+
+    public function shelter()
+    {
+        return $this->hasOne(Shelter::class, 'id', 'shelter_id');
+    }
 }

@@ -100,7 +100,7 @@ Route::prefix('catalog')->group(function () {
 
 //    Route::get('', 'CatalogController@index')->name('catalog');
     Route::get('', 'CatalogController@findByPetType')->name('catalog.findByPetType');
-
+    Route::get('/{id}', 'CatalogController@showPet')->name('catalog.showPet');
 
 });
 

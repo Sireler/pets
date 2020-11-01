@@ -3,8 +3,19 @@
 @section('content')
     <div class="container">
         <div class="row">
+
+            @php
+
+                $photo = asset('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg' );
+                if( ! is_file('img/' . $pet->shelter->shelter_id . '/' . $pet->card_number . '.jpg')) {
+                    $photo = asset('img/nophoto.jpg');
+                }
+
+            @endphp
+
+
             <div class="col-5">
-                <img class="card-img-top" src="{{ asset('../img/3/1197.jpg') }}" alt="pet-image">
+                <img style="max-width: 500px; max-height: 600px;" class="card-img-top" src="{{ $photo }}" alt="pet-image">
             </div>
             <div class="col-6">
             <div class="col-auto">
@@ -18,7 +29,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Кличка:
+                                                Кличка: {{ $pet->name }}
                                             </div>
                                         </div>
                                     </li>
@@ -26,7 +37,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Пол:
+                                                Пол: {{ $pet->sex }}
                                             </div>
                                         </div>
                                     </li>
@@ -34,7 +45,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Возраст:
+                                                Возраст: {{ $pet->date_of_birth }}
                                             </div>
                                         </div>
                                     </li>
@@ -42,7 +53,7 @@
 
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Вес:
+                                                Вес: {{ $pet->weight }} кг
                                             </div>
                                         </div>
                                     </li>
@@ -60,7 +71,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Приют:
+                                                Приют: {{ $pet->shelter->shelter->name }}
                                             </div>
                                         </div>
                                     </li>
@@ -68,7 +79,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Телефон:
+                                                Телефон: {{ $pet->shelter->shelter->phone }}
                                             </div>
                                         </div>
                                     </li>
@@ -76,15 +87,7 @@
                                     <li>
                                         <div class="row w-100">
                                             <div class="col-auto">
-                                                Эксплуатирующая организация:
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="row w-100">
-                                            <div class="col-auto">
-                                                Номер вольера:
+                                                Адрес: {{ $pet->shelter->shelter->address }}
                                             </div>
                                         </div>
                                     </li>
@@ -107,7 +110,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Порода:
+                                        Порода: {{ $pet->breed_name }}
                                     </div>
                                 </div>
                             </li>
@@ -115,7 +118,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Окрас:
+                                        Окрас: {{ $pet->color }}
                                     </div>
                                 </div>
                             </li>
@@ -123,7 +126,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Шерсть:
+                                        Шерсть: {{ $pet->fur }}
                                     </div>
                                 </div>
                             </li>
@@ -131,7 +134,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Уши:
+                                        Уши: {{ $pet->ears }}
                                     </div>
                                 </div>
                             </li>
@@ -139,7 +142,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Хвост:
+                                        Хвост: {{ $pet->tail }}
                                     </div>
                                 </div>
                             </li>
@@ -147,7 +150,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Размер:
+                                        Размер: {{ $pet->size }}
                                     </div>
                                 </div>
                             </li>
@@ -155,7 +158,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Особые приметы:
+                                        Особые приметы: {{ $pet->special_signs }}
                                     </div>
                                 </div>
                             </li>
@@ -163,7 +166,7 @@
                             <li>
                                 <div class="row w-100">
                                     <div class="col-auto">
-                                        Характер:
+                                        Характер: очень добрая
                                     </div>
                                 </div>
                             </li>

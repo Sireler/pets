@@ -34,4 +34,13 @@ class CatalogController extends Controller
             'pets' => $pets
         ]);
     }
+
+    public function showPet(Request $request, $id)
+    {
+        $pet = Pet::where('id', $id)->first();
+
+        return view('card', [
+            'pet' => $pet
+        ]);
+    }
 }
