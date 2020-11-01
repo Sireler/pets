@@ -26,7 +26,11 @@
                                     @foreach($pets as $pet)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $pet->card_number }}</td>
+                                            <td>
+                                                <a href="{{ route('home.shelter.petCard', ['id' => 1, 'pet' => $pet->id]) }}">
+                                                    {{ $pet->card_number }}
+                                                </a>
+                                            </td>
                                             <td>{{ $pet->name }}</td>
                                             <td>{{ $pet->type }}</td>
                                             <td>{{ $pet->sex }}</td>
