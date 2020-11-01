@@ -37,15 +37,25 @@ class HomeController extends Controller
         /** @var User $user */
         $user = $request->user();
 
-        $user->addRole(UserRole::ROLE_SUPPORT);
-        $user->save();
+        $sheltersCount = Shelter::count();
+        $petsCount = Pet::count();
 
+        //$user->addRole(UserRole::ROLE_SUPPORT);
+        //$user->save();
 
         return view('home', [
+            'sheltersCount' => $sheltersCount,
+            'petsCount' => $petsCount,
             'user' => $user
         ]);
     }
 
+    /**
+     * Список приютов
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function shelters(Request $request)
     {
         $shelters = Shelter::all();
@@ -55,6 +65,13 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Просмотр животных в приюте
+     *
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function shelter(Request $request, $id)
     {
         $shelter = Shelter::where('id', $id)->first();
@@ -67,6 +84,14 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Карточка животного
+     *
+     * @param Request $request
+     * @param $shelterId
+     * @param $petId
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function shelterPetCard(Request $request, $shelterId, $petId)
     {
         $pet = Pet::where('id', $petId)->first();
@@ -76,6 +101,12 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Генерация word отчета
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \PHPStamp\Exception\InvalidArgumentException
+     */
     public function generateReport()
     {
         $cachePath = public_path();

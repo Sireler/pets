@@ -41,7 +41,7 @@
                             <div class="alert alert-info">
                                 <h4 class="font-weight-bold">Приютов в системе: </h4>
                                 <div class="text-center display-3">
-                                    13
+                                    {{ $sheltersCount }}
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <div class="alert alert-info">
                                 <h4 class="font-weight-bold">Животных в приютах: </h4>
                                 <div class="text-center display-2">
-                                    252
+                                    {{ $petsCount }}
                                 </div>
                             </div>
                         </div>
