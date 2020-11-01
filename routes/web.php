@@ -114,6 +114,7 @@ Route::get('/home/shelters', 'HomeController@shelters')->name('home.shelters');
 Route::get('/home/shelter/{id}/pets', 'HomeController@shelter')->name('home.shelter');
 Route::get('/home/shelter/{id}/pets/{pet}', 'HomeController@shelterPetCard')->name('home.shelter.petCard');
 Route::get('/home/report', 'HomeController@generateReport')->name('home.report');
+Route::get('/home/pets', 'HomeController@petsRegister')->name('home.pets');
 
 
 Route::prefix('api')->group(function () {

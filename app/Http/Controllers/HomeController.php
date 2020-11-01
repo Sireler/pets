@@ -102,6 +102,19 @@ class HomeController extends Controller
     }
 
     /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function petsRegister(Request $request)
+    {
+        $pets = Pet::all();
+
+        return view('home.pets', [
+            'pets' => $pets
+        ]);
+    }
+
+    /**
      * Генерация word отчета
      *
      * @return \Illuminate\Http\RedirectResponse
