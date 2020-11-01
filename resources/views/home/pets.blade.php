@@ -7,7 +7,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>Реестр животных</h3>
-
                         <div class="row">
                             <div class="col-md-12">
                                 <table class="table" id="pet-registry">
