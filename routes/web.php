@@ -116,6 +116,9 @@ Route::get('/home/shelter/{id}/pets/{pet}', 'HomeController@shelterPetCard')->na
 Route::get('/home/report', 'HomeController@generateReport')->name('home.report');
 Route::get('/home/petReport/{id}', 'HomeController@generatePetReport')->name('home.pet_report');
 Route::post('/home/pet/{id}/update', 'HomeController@updatePet')->name('home.pet_update');
+Route::get('/home/shelter/{id}/addpet', 'HomeController@addPet')->name('home.pet_add');
+Route::post('/home/shelter/{id}/addpet', 'HomeController@addPetPost')->name('home.pet_add_post');
+
 
 Route::get('/home/pets', 'HomeController@petsRegister')->name('home.pets');
 

@@ -9,10 +9,18 @@ class Pet extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'card_number',
         'name',
         'description',
         'type',
         'breed_name',
+        'weight',
+        'fur',
+        'ears',
+        'tail',
+        'size',
+        'special_signs',
+        'enclosure_number',
         'color',
         'date_of_birth',
         'sex',

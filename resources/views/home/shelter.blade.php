@@ -15,6 +15,8 @@
                         @endif
 
                         <a class="btn btn-primary my-2" href="{{ route('home.pet_report', $shelter->id) }}">Вывести на печать</a>
+                        <a class="btn btn-primary my-2" href="{{ route('home.pet_add', $shelter->id) }}">Добавить животное</a>
+
 
                         <div class="row">
                             <div class="col-md-12">

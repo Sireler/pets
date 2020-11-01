@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\BreedType;
+use App\ColorType;
+use App\EarType;
 use App\GenderType;
 use App\Pet;
 use App\PetMovement;
@@ -10,7 +12,9 @@ use App\PetShelter;
 use App\PetType;
 use App\Role\UserRole;
 use App\Shelter;
+use App\TailType;
 use App\User;
+use App\WoolType;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -120,6 +124,53 @@ class HomeController extends Controller
 
         $pet = Pet::where('id', $id)->first();
         $pet->update($data);
+
+        return redirect()->back();
+    }
+
+    public function addPet(Request $request, $id)
+    {
+        $shelter = Shelter::where('id', $id)->first();
+
+        $petTypes = PetType::all();
+        $petBreeds = BreedType::all();
+        $petGenders = GenderType::all();
+        $petColors = ColorType::all();
+        $petEars = EarType::all();
+        $petFurs = WoolType::all();
+        $petTails = TailType::all();
+
+        return view('home.pet_add', [
+            'shelter' => $shelter,
+            'petTypes' => $petTypes,
+            'petBreeds' => $petBreeds,
+            'petGenders' => $petGenders,
+            'petColors' => $petColors,
+            'petEars' => $petEars,
+            'petFurs' => $petFurs,
+            'petTails' => $petTails
+        ]);
+    }
+
+    public function addPetPost(Request $request, $id)
+    {
+        $data = $request->except('_token');
+        $data['card_number'] .= 'Z';
+        $data['special_signs'] = 'нет';
+        $data['enclosure_number'] = 1;
+
+        $pet = Pet::create($data);
+
+        // TODO: ДОБАВИТЬ ЗАПИСЬ О ЖИВОТНОМ
+        $sh = Shelter::where('id', $id)->first();
+        $shelter = PetShelter::create([
+            'pet_id' => $pet->id,
+            'shelter_id' => $sh->id,
+            'address' => $sh->address,
+            'shelter_name' => $sh->organization->name, // наименование организации
+            'shelter_owner_name' => 'Игнатов А.В.',
+            'animal_watcher_name' => 'Работник 1'
+        ]);
 
         return redirect()->back();
     }
