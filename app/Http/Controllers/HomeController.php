@@ -105,11 +105,19 @@ class HomeController extends Controller
         $petTypes = PetType::all();
         $petBreeds = BreedType::all();
         $petGenders = GenderType::all();
+        $petColors = ColorType::all();
+        $petEars = EarType::all();
+        $petFurs = WoolType::all();
+        $petTails = TailType::all();
 
         return view('home.pet_card', [
             'petTypes' => $petTypes,
             'petBreeds' => $petBreeds,
             'petGenders' => $petGenders,
+            'petColors' => $petColors,
+            'petEars' => $petEars,
+            'petFurs' => $petFurs,
+            'petTails' => $petTails,
             'pet' => $pet
         ]);
     }
@@ -121,8 +129,10 @@ class HomeController extends Controller
     public function updatePet(Request $request, $id)
     {
         $data = $request->except('_token');
+        $data['weight'] = (float) $data['weight'];
 
         $pet = Pet::where('id', $id)->first();
+
         $pet->update($data);
 
         return redirect()->back();

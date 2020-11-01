@@ -111,13 +111,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col">
-                                <button class="btn btn-success">Сохранить</button>
-                            </div>
-                        </div>
+
                     </div>
-                </form>
+
                     <!-- Внешний вид -->
                     <div class="container">
                         <div class="row my-4">
@@ -128,15 +124,23 @@
                         <div class="row">
                             <div class="col">
                                 <label for="color">Окрас</label>
-                                <select disabled id="color" class=" form-control" name="color">
-                                    <option value="">{{ $pet->color }}</option>
+                                <select required id="color" class=" form-control" name="color">
+                                    @foreach($petColors as $c)
+                                        <option @if($c->name == $pet->color) selected @endif>
+                                            {{ $c->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="col">
                                 <label for="skin">Шерсть</label>
-                                <select disabled id="skin" class=" form-control" name="skin">
-                                    <option value="">{{ $pet->fur }}</option>
+                                <select required id="skin" class=" form-control" name="fur">
+                                    @foreach($petFurs as $c)
+                                        <option @if($c->name == $pet->fur) selected @endif>
+                                            {{ $c->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -144,15 +148,23 @@
                         <div class="row">
                             <div class="col">
                                 <label for="ears">Уши</label>
-                                <select disabled id="ears" class=" form-control" name="ears">
-                                    <option value="">{{ $pet->ears }}</option>
+                                <select required id="ears" class=" form-control" name="ears">
+                                    @foreach($petEars as $c)
+                                        <option @if($c->name == $pet->ears) selected @endif>
+                                            {{ $c->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="col">
                                 <label for="tale">Хвост</label>
-                                <select disabled id="tale" class=" form-control" name="tale">
-                                    <option value="">{{ $pet->tail }}</option>
+                                <select required id="tale" class=" form-control" name="tail">
+                                    @foreach($petTails as $c)
+                                        <option @if($c->name == $pet->tail) selected @endif>
+                                            {{ $c->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -160,18 +172,28 @@
                         <div class="row">
                             <div class="col">
                                 <label for="size">Размер</label>
-                                <input disabled id="size" class=" form-control"
-                                       name="size" type="text" value="{{ $pet->size }}" >
+                                <select required id="size" class=" form-control" name="size">
+                                    <option @if($pet->size == 'средний') selected @endif>средний</option>
+                                    <option @if($pet->size == 'малый') selected @endif>малый</option>
+                                    <option @if($pet->size == 'крупный') selected @endif>крупный</option>
+                                </select>
                             </div>
 
                             <div class="col">
                                 <label for="weight">Вес</label>
-                                <input disabled id="weight" class=" form-control"
+                                <input required id="weight" class=" form-control"
                                        name="weight" type="text" value="{{ $pet->weight }} кг" >
                             </div>
                         </div>
-                    </div>
 
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="btn btn-success">Сохранить</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
                     <!-- Особенности -->
                     <div class="container">
                         <div class="row">
@@ -194,6 +216,7 @@
 {{--                            </div>--}}
                         </div>
 
+                        @if (isset($pet->info))
                         <div class="row">
                             <div class="col-auto">
                                 <label for="idPetNumber">Идентификационная метка</label>
@@ -208,8 +231,10 @@
                                        @if(@$pet->info->socialized == 1) checked @endif>
                             </div>
                         </div>
+                        @endif
                     </div>
 
+                    @if (isset($pet->info))
                     <!-- Стерилизация -->
                     <div class="container">
                         <div class="row">
@@ -224,6 +249,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
 
                     <!-- Сведения об отлове -->
