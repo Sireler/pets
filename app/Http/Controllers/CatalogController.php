@@ -16,7 +16,9 @@ class CatalogController extends Controller
         $petTypes = PetType::all();
         $petType = PetType::where('id', $id)->first();
 
-        $pets = Pet::where('type', $petType->name);
+        $pets = Pet::whereHas('info', function($query) {
+            return $query->where('socialized', 1);
+        })->where('type', $petType->name);
 
         $age = $request->get('age');
         if ($age == '1') {
